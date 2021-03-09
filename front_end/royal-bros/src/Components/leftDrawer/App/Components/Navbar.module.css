@@ -1,0 +1,13 @@
+.navbarLinks{
+    border: 1px solid gray;
+    background-color: white;
+}
+
+.navbar{
+    background-color: white;
+}
+
+/* .navParent{
+    border: 5px solid red;
+    display: flex;
+} */
