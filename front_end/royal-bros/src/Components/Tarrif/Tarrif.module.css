@@ -1,0 +1,77 @@
+.Tarrif {
+}
+
+.Tarrif__bikes {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1600px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.BikeCard {
+  width: 30%;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  margin: 10px;
+  min-width: 430px;
+}
+
+.BikeCard h2 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.BikeCard__Nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgb(219, 216, 216);
+}
+
+.BikeCard__Nav__tab {
+  text-decoration: none;
+  list-style: none;
+  border-radius: 0;
+  width: 20%;
+  padding: 15px 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.BikeCard__panel {
+  height: 250px;
+  padding: 20px 0;
+}
+
+.BikeCard__panel li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: auto;
+  width: 90%;
+}
+
+.BikeCard__button {
+  width: 100%;
+  background-color: #fed250;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+}
+
+.BikeCard__button:hover {
+  background-color: #ffc400;
+}
