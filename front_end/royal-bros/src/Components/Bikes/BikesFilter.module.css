@@ -1,0 +1,10 @@
+.date__time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 2px;
+    font-size: 15px;
+    overflow: hidden;
+   
+}

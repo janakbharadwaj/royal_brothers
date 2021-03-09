@@ -1,8 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { tarrifReducer } from "./Tarrif/TarrifReducer";
+import bikeReducer from "./Bikes/bikeReducer"
+const rootReducer = combineReducers({
+   tarrifReducer,
+   bikes:bikeReducer   
 
-const rootReducer = combineReducers({ tarrifReducer });
+  });
 
 let composeEnhancers = compose;
 
