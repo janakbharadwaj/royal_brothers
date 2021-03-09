@@ -24,6 +24,13 @@
   font-weight: 700;
 }
 
+.BikeCard_image {
+}
+
+.BikeCard_image img {
+  transform: translate(-50px);
+}
+
 .BikeCard__Nav {
   display: flex;
   align-items: center;
@@ -46,16 +53,8 @@
 
 .BikeCard__panel {
   height: 250px;
-  padding: 20px 0;
-}
-
-.BikeCard__panel li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
-  margin: auto;
-  width: 90%;
+  padding: 30px;
+  text-align: left;
 }
 
 .BikeCard__button {
@@ -66,12 +65,27 @@
   text-transform: uppercase;
   border: none;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 1.1px;
   line-height: 36px;
   outline: none;
+  font-family: "Mulish", sans-serif;
 }
 
 .BikeCard__button:hover {
   background-color: #ffc400;
+}
+
+.BikeCard__panel__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.BikeCard__panel__flex > div:nth-child(1) {
+  width: 80%;
+}
+
+.BikeCard__panel__sub {
+  margin: 15px auto;
 }

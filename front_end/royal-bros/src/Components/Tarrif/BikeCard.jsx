@@ -8,7 +8,7 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
   return (
     <div className={styles.BikeCard}>
       <h2>{bike_name}</h2>
-      <div>
+      <div className={styles.BikeCard_image}>
         <img src={bike_image} alt="bikeImage"></img>
       </div>
       <Tabs>
@@ -22,8 +22,10 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
           </TabList>
           <TabPanel>
             <div className={styles.BikeCard__panel}>
-              <b>Mon-Thu</b>
-              <div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Mon-Thu</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
                 <div>
                   <span>Booking Time(0 - 12 hrs)</span>
                 </div>
@@ -31,7 +33,7 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
                   <span>₹ {hourly_rate}/hr</span>
                 </div>
               </div>
-              <div>
+              <div className={styles.BikeCard__panel__flex}>
                 <div>
                   <span>Booking Time({`>`} 12 hrs)</span>
                 </div>
@@ -39,14 +41,18 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
                   <span>₹ {hourly_rate - 5}/hr</span>
                 </div>
               </div>
-              <b>Extras</b>
-              <div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Extras</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
                 <div>
                   <span>Kilometers Limit</span>
                 </div>
                 <div>
-                  <span> {kilometer_limit}/hr</span>
+                  <span>{kilometer_limit}/hr</span>
                 </div>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
                 <div>
                   <span>Excess Kilometer Charges</span>
                 </div>
@@ -58,22 +64,162 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
           </TabPanel>
           <TabPanel>
             <div className={styles.BikeCard__panel}>
-              <h2>Any content 2</h2>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Rental Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Price for 7 days</span>
+                </div>
+                <div>
+                  <span>₹ {hourly_rate * 7 * 24} </span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Km Limit</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>
+                    No of kms in 7 days that can be travelled without extra
+                    charges
+                  </span>
+                </div>
+                <div>
+                  <span>{kilometer_limit * 100} Km</span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Excess Kilometer Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Excess Kilometer Charges</span>
+                </div>
+                <div>
+                  <span>₹ {kilometer_limit - 2}/km</span>
+                </div>
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
             <div className={styles.BikeCard__panel}>
-              <h2>Any content 3</h2>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Rental Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Price for 15 days</span>
+                </div>
+                <div>
+                  <span>₹ {hourly_rate * 15 * 24} </span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Km Limit</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>
+                    No of kms in 15 days that can be travelled without extra
+                    charges
+                  </span>
+                </div>
+                <div>
+                  <span>{kilometer_limit * 150} Km</span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Excess Kilometer Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Excess Kilometer Charges</span>
+                </div>
+                <div>
+                  <span>₹ {kilometer_limit - 2}/km</span>
+                </div>
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
             <div className={styles.BikeCard__panel}>
-              <h2>Any content 4</h2>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Rental Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Price for 30 days</span>
+                </div>
+                <div>
+                  <span>₹ {hourly_rate * 17 * 24} </span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Km Limit</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>
+                    No of kms in 30 days that can be travelled without extra
+                    charges
+                  </span>
+                </div>
+                <div>
+                  <span>{kilometer_limit * 300} Km</span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Excess Kilometer Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Excess Kilometer Charges</span>
+                </div>
+                <div>
+                  <span>₹ {kilometer_limit - 3}/km</span>
+                </div>
+              </div>
             </div>
           </TabPanel>
           <TabPanel>
             <div className={styles.BikeCard__panel}>
-              <h2>Any content 5</h2>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Rental Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Price for 90 days</span>
+                </div>
+                <div>
+                  <span>₹ {hourly_rate * 40 * 24} </span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Km Limit</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>
+                    No of kms in 90 days that can be travelled without extra
+                    charges
+                  </span>
+                </div>
+                <div>
+                  <span>{kilometer_limit * 900} Km</span>
+                </div>
+              </div>
+              <div className={styles.BikeCard__panel__sub}>
+                <b>Excess Kilometer Charges</b>
+              </div>
+              <div className={styles.BikeCard__panel__flex}>
+                <div>
+                  <span>Excess Kilometer Charges</span>
+                </div>
+                <div>
+                  <span>₹ {kilometer_limit - 4}/km</span>
+                </div>
+              </div>
             </div>
           </TabPanel>
         </div>
@@ -84,29 +230,3 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
 }
 
 export default BikeCard;
-{
-  /* <div>
-<b>Mon-Thu</b>
-</div>
-<div>
-<span>(Min 4 hrs booking)</span>
-<ul>
-  <li>
-    <div>
-      <p>Booking Time (0-12 hrs)</p>
-    </div>
-    <div>
-      <p>₹ 20/hr</p>
-    </div>
-  </li>
-  <li>
-    <div>
-      <p>Booking Time ({`>`}12 hrs)</p>
-    </div>
-    <div>
-      <p>₹ 17/hr</p>
-    </div>
-  </li>
-</ul>
-</div> */
-}
