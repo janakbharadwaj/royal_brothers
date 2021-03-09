@@ -4,7 +4,13 @@ import styles from "./Tarrif.module.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
-function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
+function BikeCard({
+  bike_name,
+  bike_image,
+  hourly_rate,
+  kilometer_limit,
+  bookNowHandler,
+}) {
   return (
     <div className={styles.BikeCard}>
       <h2>{bike_name}</h2>
@@ -224,7 +230,9 @@ function BikeCard({ bike_name, bike_image, hourly_rate, kilometer_limit }) {
           </TabPanel>
         </div>
       </Tabs>
-      <button className={styles.BikeCard__button}>Book Now</button>
+      <button onClick={bookNowHandler} className={styles.BikeCard__button}>
+        Book Now
+      </button>
     </div>
   );
 }

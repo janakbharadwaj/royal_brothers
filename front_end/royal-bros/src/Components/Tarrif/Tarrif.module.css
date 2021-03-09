@@ -38,7 +38,7 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
-  box-shadow: 2px 2px 5px rgb(219, 216, 216);
+  box-shadow: -2px 3px 10px rgb(219, 216, 216);
 }
 
 .BikeCard__Nav__tab {
@@ -49,12 +49,16 @@
   padding: 15px 0;
   font-size: 13px;
   font-weight: 400;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 3px solid #fed250;
+  text-transform: uppercase;
 }
 
 .BikeCard__panel {
   height: 250px;
   padding: 30px;
   text-align: left;
+  font-size: 13px;
 }
 
 .BikeCard__button {
