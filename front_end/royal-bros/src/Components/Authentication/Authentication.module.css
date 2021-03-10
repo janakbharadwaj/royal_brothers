@@ -2,6 +2,11 @@
   max-width: 550px;
   margin: 100px auto;
 }
+
+.Authentication * {
+  transition: all 0.5s ease-out;
+}
+
 .Authentication h1 {
   font-size: 29px;
   font-weight: 600;
@@ -21,6 +26,7 @@
 
 .Authentication__nav div {
   width: 100%;
+  border-bottom: 1px solid rgb(228, 225, 225);
 }
 
 .Authentication__nav div button {
@@ -37,6 +43,12 @@
 
 .Authentication__form {
   padding: 0px 30px 30px 30px;
+  text-align: left;
+}
+
+.Authentication__form label {
+  font-weight: 600;
+  font-size: 17px;
 }
 
 .Authentication__button {

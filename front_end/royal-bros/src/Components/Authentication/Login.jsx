@@ -1,12 +1,13 @@
 import React from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { useDispatch, useSelector } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 import styles from "./Authentication.module.css";
+import { loginHandler } from "../../Redux/Auth/Actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,9 +16,16 @@ const useStyles = makeStyles((theme) => ({
   },
   margin: {},
   textField: {
-    width: "25ch",
     margin: "10px auto",
     width: "100%",
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "grey",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "#FED250",
+      },
+    },
   },
 }));
 
@@ -29,6 +37,15 @@ const initState = {
 function Login() {
   const classes = useStyles();
   const [formData, setFormData] = React.useState(initState);
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.authReducer.userData);
+  const message = useSelector((state) => state.authReducer.loginRes);
+  const isAuth = useSelector((state) => state.authReducer.isAuth);
+  const [passwordVisible, setPasswordVisible] = React.useState(false);
+
+  const passwordVisibilityHandler = () => {
+    setPasswordVisible((prev) => !prev);
+  };
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -37,11 +54,16 @@ function Login() {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(formData);
+    dispatch(loginHandler(formData));
   };
 
   return (
     <form onSubmit={onSubmitHandler} className={styles.Authentication__form}>
+      <h3
+        style={{ color: message === "User already exists" ? "red" : "green" }}
+      >
+        {message}
+      </h3>
       <div>
         <TextField
           className={classes.textField}
@@ -55,12 +77,16 @@ function Login() {
       <div>
         <TextField
           className={classes.textField}
-          type="password"
+          type={passwordVisible ? "text" : "password"}
           label="Password"
           variant="outlined"
           name="password"
           InputProps={{
-            endAdornment: <Visibility></Visibility>,
+            endAdornment: passwordVisible ? (
+              <VisibilityOff onClick={passwordVisibilityHandler} />
+            ) : (
+              <Visibility onClick={passwordVisibilityHandler} />
+            ),
           }}
           onChange={onChangeHandler}
         />

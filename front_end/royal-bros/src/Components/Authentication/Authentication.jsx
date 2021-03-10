@@ -22,6 +22,7 @@ function Authentication() {
                   current === "login"
                     ? "5px solid #FED250"
                     : " 5px solid white",
+                color: current === "login" ? "black" : "grey",
               }}
               onClick={() => handleChange("login")}
             >
@@ -35,6 +36,7 @@ function Authentication() {
                   current !== "login"
                     ? "5px solid  #FED250"
                     : " 5px solid white",
+                color: current !== "login" ? "black" : "grey",
               }}
               onClick={() => handleChange("signup")}
             >

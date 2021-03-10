@@ -65,10 +65,9 @@ app.post(
   ],
   async (req, res) => {
     const errors = validationResult(req);
-    console.log(errors);
     if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: errors.array(),
+      return res.send({
+        message: errors.errors.msg,
       });
     }
 
@@ -78,7 +77,7 @@ app.post(
       email,
     });
     if (user) {
-      return res.status(400).json({
+      return res.send({
         message: "User already exists",
       });
     }
@@ -97,41 +96,28 @@ app.post(
 );
 
 //login
-app.post(
-  "/users/login",
-  [
-    check("email", "Please enter a valid email").isEmail(),
-    check("password", "Invalid password").isLength({
-      min: 8,
-    }),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({
-        errors: errors.array(),
-      });
-    }
-
-    const { email, password } = req.body;
-
-    let user = await User.findOne({
-      email,
+app.post("/users/login", async (req, res) => {
+  const { email, password } = req.body;
+  let user = await User.findOne({
+    email,
+  });
+  if (!user) {
+    return res.send({
+      isAuth: false,
+      message: "User does not exist",
     });
-    if (!user) {
-      return res.status(400).json({
-        message: "User does not exist",
-      });
-    }
-
-    if (user.password !== password) {
-      return res.status(400).json({
-        message: "Incorrect Password",
-      });
-    }
-    res.status(200).json({ message: "Login  Successful", userId: user.id });
   }
-);
+
+  if (user.password !== password) {
+    return res.send({
+      isAuth: false,
+      message: "Incorrect Password",
+    });
+  }
+  res
+    .status(200)
+    .json({ message: "Login  Successful", userData: user, isAuth: true });
+});
 
 async function start() {
   await connect();
