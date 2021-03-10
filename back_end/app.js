@@ -34,6 +34,25 @@ app.get("/bikes/:id", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+const locationBikesSchema=new mongoose.Schema({
+  location_name:{type:String,required:true},
+  location_image:{type:String,required:true},
+  bikes:[
+    {
+      isEngaged:Boolean,
+      bikeid:{
+     type:mongoose.Schema.Types.ObjectId,
+     ref:"bikes",
+     required:true
+  }}]
+
+} , {versionKey:false});
+
+const LocationBikes=mongoose.model("location",locationBikesSchema)
+app.get("/locations",async (req,res)=>{
+  const location=await LocationBikes.find({}).lean().exec();
+  res.status(200).json({data:location})
+})
 async function start() {
   await connect();
   app.listen(port, () => {
