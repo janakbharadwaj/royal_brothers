@@ -16,8 +16,17 @@ const connect = () => {
     useFindAndModify: false,
   });
 };
+const locationBikesSchema = mongoose.Schema(
+  {
+    location_name: { type: String, required: true },
+    location_image: { type: String, required: true },
+  },
+  { versionKey: false }
+);
 
-const bikeSchema = mongoose.Schema({
+const LocationBikes = mongoose.model("location", locationBikesSchema);
+
+const bikeSchema = new mongoose.Schema({
   bike_name: String,
   bike_image: String,
   hourly_rate: Number,
@@ -34,20 +43,20 @@ app.get("/bikes", async (req, res) => {
 
 //location
 
-const locationBikesSchema = new mongoose.Schema(
-  {
-    location_name: { type: String, required: true },
-    location_image: { type: String, required: true },
-  },
-  { versionKey: false }
-);
+// const locationBikesSchema = new mongoose.Schema(
+//   {
+//     location_name: { type: String, required: true },
+//     location_image: { type: String, required: true },
+//   },
+//   { versionKey: false }
+// );
 
-const LocationBikes = mongoose.model("location", locationBikesSchema);
+// const LocationBikes = mongoose.model("location", locationBikesSchema);
 
-app.get("/location", async (req, res) => {
-  const location = await LocationBikes.find({}).lean().exec();
-  res.status(200).json({ data: location });
-});
+// app.get("/location", async (req, res) => {
+//   const location = await LocationBikes.find({}).lean().exec();
+//   res.status(200).json({ data: location });
+// });
 
 //user auth
 
@@ -117,6 +126,19 @@ app.post("/users/login", async (req, res) => {
   res
     .status(200)
     .json({ message: "Login  Successful", userData: user, isAuth: true });
+});
+
+app.get("/locations", async (req, res) => {
+  const location = await LocationBikes.find({}).lean().exec();
+  res.status(200).json({ data: location });
+});
+
+app.get("/location/:locationid/bikes", async (req, res) => {
+  const bikes = await Bikes.find({ locationId: req.params.locationid })
+    .lean()
+    .exec();
+  const location = await LocationBikes.findById(req.params.locationid);
+  res.status(200).json({ data: bikes });
 });
 
 async function start() {
