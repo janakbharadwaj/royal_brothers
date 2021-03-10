@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
 function BikeCard({
+  _id,
   bike_name,
   bike_image,
   hourly_rate,
@@ -230,7 +231,18 @@ function BikeCard({
           </TabPanel>
         </div>
       </Tabs>
-      <button onClick={bookNowHandler} className={styles.BikeCard__button}>
+      <button
+        onClick={() =>
+          bookNowHandler({
+            _id,
+            bike_name,
+            bike_image,
+            hourly_rate,
+            kilometer_limit,
+          })
+        }
+        className={styles.BikeCard__button}
+      >
         Book Now
       </button>
     </div>
