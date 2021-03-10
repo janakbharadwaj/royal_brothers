@@ -1,3 +1,4 @@
+require("dotenv/config");
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -6,7 +7,7 @@ const port = "8080";
 app.use(express.json());
 
 const connect = () => {
-  return mongoose.connect("mongodb://127.0.0.1:27017/royal_brothers", {
+  return mongoose.connect(process.env.API_KEY, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
