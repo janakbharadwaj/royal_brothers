@@ -21,7 +21,6 @@ function Search({ modalOpen, setModalOpen }) {
     selectedBike,
   } = React.useContext(SelectionContext);
   const { pickupDate, pickupTime, dropDate, dropTime } = info;
-  // console.log(selectedBike);
   return (
     <Modal
       className={classes.root}
@@ -70,6 +69,15 @@ function Search({ modalOpen, setModalOpen }) {
                 type="time"
               ></input>
             </div>
+          </div>
+          <div className={styles.Search__element}>
+            <label>Selected Bike</label>
+          </div>
+          <div className={styles.Search__element}>
+            <img src={selectedBike.bike_image} alt="bikeImage"></img>
+          </div>
+          <div className={styles.Search__element}>
+            <p>{selectedBike.bike_name}</p>
           </div>
           <div className={styles.Search__element}>
             <button type="submit">Search</button>
