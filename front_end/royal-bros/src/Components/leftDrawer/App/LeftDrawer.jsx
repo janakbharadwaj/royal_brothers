@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { RoyalbrotherX } from "../RoyalbrotherX/RoyalbrotherX";
-import { Tarrif } from "../Tarrif/Tarrif";
+import Tarrif from "../../Tarrif/Tarrif";
+
 import { SiteLayout } from "./Components/SiteLayout";
 
 function LeftDrawer() {
@@ -9,8 +9,7 @@ function LeftDrawer() {
     <>
       <SiteLayout>
         <Switch>
-          <Route path='/tarrif' exact render={()=><Tarrif/>}/>
-          <Route path='/royalbrothersX' exact render={()=><RoyalbrotherX/>}/>
+          <Route path='/tarrif' exact render={()=><Tarrif></Tarrif>}/>
         </Switch>
       </SiteLayout>
     </>
