@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Authentication from "../Components/Authentication/Authentication";
 import Bikes from "../Components/Bikes/Bikes";
+import Home from "../Components/Home/Home";
 import Tarrif from "../Components/Tarrif/Tarrif";
 
 const Routes = () => {
@@ -9,7 +10,7 @@ const Routes = () => {
     <>
       <Switch>
         <Route path="/" exact>
-          <h1>home - landing</h1>
+          <Home></Home>
         </Route>
         <Route path="/tarrif" exact>
           <Tarrif />

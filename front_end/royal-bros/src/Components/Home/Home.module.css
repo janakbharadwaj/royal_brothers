@@ -1,0 +1,97 @@
+.Home {
+}
+
+.Home__header {
+  margin-top: -20px;
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/home_back_june-760c94ec6cba24f16e94abd16473fa36629ac92468a73289bbefba546692f877.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 100px;
+}
+
+.Search {
+  text-align: left;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgb(209, 206, 206);
+  padding: 25px;
+  font-family: "Mulish", sans-serif;
+  outline: none;
+  border-radius: 5px;
+}
+.Search__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search__element > div {
+  width: 50%;
+  margin: 15px auto;
+}
+
+.Search label {
+  font-weight: 800;
+}
+
+.Search__element input {
+  width: 90%;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 0.5px solid rgb(228, 225, 225);
+  margin: 5px auto;
+  color: rgb(80, 75, 75);
+}
+
+.Search__element > button {
+  width: 100%;
+  font-size: 17px;
+  padding: 10px;
+  margin: 25px auto 25px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-family: "Mulish", sans-serif;
+  background-color: #fed250;
+}
+
+.Home__services__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.Home__services__foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home__services__foot > div {
+  margin: 10px 40px;
+}
+
+.Home__services__foot img {
+  margin: 15px;
+}
+
+.Home__rentals {
+  background: linear-gradient(to right, #537895, #09203f);
+  height: 60vh;
+  width: 100%;
+  position: relative;
+}
+
+.Home__rentals__biker {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
