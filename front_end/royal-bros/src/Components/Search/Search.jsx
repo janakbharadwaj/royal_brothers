@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Modal, Paper } from "@material-ui/core";
 import styles from "./Search.module.css";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
