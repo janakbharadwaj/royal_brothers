@@ -5,6 +5,12 @@
     flex-wrap: wrap;
     margin: 20px 2px;
     font-size: 15px;
-    overflow: hidden;
    
+    text-align: left;
+   
+}
+.date__time  input{
+    border:0;
+    outline: none;
+    border-bottom: 1px solid black;
 }
