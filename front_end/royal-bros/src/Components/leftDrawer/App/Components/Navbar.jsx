@@ -7,13 +7,14 @@ import {
     ListItem,
     ListItemText,
   } from "@material-ui/core";
-  import styles from './Navbar.module.css';
-  import clsx from "clsx";
-  import React from "react";
-  import MenuIcon from "@material-ui/icons/Menu";
-  import { makeStyles } from "@material-ui/core/styles";
-  import { Link, useHistory } from "react-router-dom";
-  const drawerWidth = 240;
+import styles from './Navbar.module.css';
+import clsx from "clsx";
+import React from "react";
+import MenuIcon from "@material-ui/icons/Menu";
+import { makeStyles } from "@material-ui/core/styles";
+import { Link, useHistory } from "react-router-dom";
+import { OverlayVisible } from "../../profileDropdown";
+const drawerWidth = 240;
   
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -124,8 +125,9 @@ import {
                   src='https://d36g7qg6pk2cm7.cloudfront.net/assets/profile-f17aa1dfbd0cb562142f1dcb10bb7ad33e1ac8417ad29a1cdab7dfbfbbfe2f15.png' 
                   alt='profile'
                 />
-                <span>user</span>
-                <i class="fas fa-chevron-down"></i>
+                <span><OverlayVisible/></span>
+                
+                {/* <i class="fas fa-chevron-down"></i> */}
               </div>
             </Toolbar>
             
