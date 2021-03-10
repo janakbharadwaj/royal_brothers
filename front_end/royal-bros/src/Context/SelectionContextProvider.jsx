@@ -1,5 +1,5 @@
 import React from "react";
-
+import {useHistory} from "react-router-dom"
 export const SelectionContext = React.createContext();
 
 const initState = {
@@ -12,7 +12,7 @@ const initState = {
 function SelectionContextProvider({ children }) {
   const [info, setInfo] = React.useState(initState);
   const [selectedBike, setSelectedBike] = React.useState(null);
-
+  const history=useHistory()
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
     setInfo({ ...info, [name]: value });
@@ -20,6 +20,7 @@ function SelectionContextProvider({ children }) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    history.push("/search")
   };
 
   const selectedBikeHandler = (payload) => {
