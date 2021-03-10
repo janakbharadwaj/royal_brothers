@@ -1,65 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import BikeCard from "./BikeCard";
 import { useSelector, useDispatch } from "react-redux";
 import { getBikesHandler } from "../../Redux/Tarrif/Actions";
-import { makeStyles } from "@material-ui/core/styles";
-import styles from "./Tarrif.module.css";
-import { Modal, Paper } from "@material-ui/core";
+import { SelectionContext } from "../../Context/SelectionContextProvider";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "absolute",
-    width: 400,
-    margin: " 200px auto",
-  },
-  paper: {},
-}));
+import styles from "./Tarrif.module.css";
+import Search from "../Search/Search";
 
 function Tarrif() {
   const allBikes = useSelector((state) => state.tarrifReducer.data);
   const dispatch = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
+  const { selectedBikeHandler } = useContext(SelectionContext);
 
-  const bookNowHandler = () => {
+  const bookNowHandler = (payload) => {
     setModalOpen(true);
+    selectedBikeHandler(payload);
   };
 
   React.useEffect(() => {
     dispatch(getBikesHandler());
   }, []);
 
-  const classes = useStyles();
   return (
     <div className={styles.Tarrif}>
-      <Modal
-        className={classes.root}
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-      >
-        <Paper>
-          <h1>Search your next ride</h1>
-          <label>Pickup</label>
-          <div>
-            <div>
-              <input type="date"></input>
-            </div>
-            <div>
-              <input type="time"></input>
-            </div>
-          </div>
-          <label>DropOff</label>
-          <div>
-            <div>
-              <input type="date"></input>
-            </div>
-            <div>
-              <input type="time"></input>
-            </div>
-          </div>
-        </Paper>
-      </Modal>
+      <Search modalOpen={modalOpen} setModalOpen={setModalOpen}></Search>
       <h1>Bike rental tariffs in Bangalore</h1>
       <div className={styles.Tarrif__bikes}>
         {allBikes?.map((item) => (

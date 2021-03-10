@@ -29,6 +29,11 @@ app.get("/bikes", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+app.get("/bikes/:id", async (req, res) => {
+  const bikes = await Bikes.find({}).lean().exec();
+  res.status(200).json({ data: bikes });
+});
+
 async function start() {
   await connect();
   app.listen(port, () => {
