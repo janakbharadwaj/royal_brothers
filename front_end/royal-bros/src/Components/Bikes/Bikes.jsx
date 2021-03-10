@@ -4,18 +4,20 @@ import React from 'react'
  import {useSelector,useDispatch} from "react-redux"
  import getBikes from "../../Redux/Bikes/action"
  import BikesFiter from "./BikesFilter"
+import {SelectionContext} from "../../Context/SelectionContextProvider"
 const Bikes = () => {
     const dispatch=useDispatch()
     const history=useHistory()
     const isLoading=useSelector(state=>state.bikes.isLoading)
     const isError=useSelector(state=>state.bikes.isError)
     const bikesData=useSelector(state=>state.bikes.bikesData)
-
+    const {info}=React.useContext(SelectionContext)
+    const { pickupDate, pickupTime, dropDate, dropTime } = info;
    const[dateTimings,setDateTimings]=React.useState({
-     pickUpDate:"16/03/2021",
-     pickUpTime:"10:30AM",
-     dropOffDate:"22/03/2021",
-     dropOffTime:"12:30PM" 
+     pickUpDate:pickupDate,
+     pickUpTime:pickupTime,
+     dropOffDate:dropDate,
+     dropOffTime:dropTime 
    })
    const handleUpdateDateTiming=(e)=>{
         const{name,value}=e.target
