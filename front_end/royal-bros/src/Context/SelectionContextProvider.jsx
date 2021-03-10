@@ -9,9 +9,18 @@ const initState = {
   dropTime: "",
 };
 
+const selectedInit = {
+  _id: "",
+  bike_name: "",
+  bike_image: "",
+  hourly_rate: "",
+  kilometer_limit: "",
+  locationId: "",
+};
+
 function SelectionContextProvider({ children }) {
   const [info, setInfo] = React.useState(initState);
-  const [selectedBike, setSelectedBike] = React.useState(null);
+  const [selectedBike, setSelectedBike] = React.useState(selectedInit);
   const history = useHistory();
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
