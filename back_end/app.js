@@ -1,3 +1,4 @@
+require("dotenv/config");
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -6,15 +7,12 @@ const port = "8080";
 app.use(express.json());
 
 const connect = () => {
-  return mongoose.connect(
-    "mongodb+srv://ak:2kl15cse007@royalbrothers.nvqto.mongodb.net/royal_brothers?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    }
-  );
+  return mongoose.connect(process.env.API_KEY, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  });
 };
 
 const bikeSchema = mongoose.Schema({
