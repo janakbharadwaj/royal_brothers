@@ -6,12 +6,15 @@ const port = "8080";
 app.use(express.json());
 
 const connect = () => {
-  return mongoose.connect("mongodb://127.0.0.1:27017/royal_brothers", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  });
+  return mongoose.connect(
+    "mongodb+srv://ak:2kl15cse007@royalbrothers.nvqto.mongodb.net/royal_brothers?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    }
+  );
 };
 
 const bikeSchema = mongoose.Schema({
