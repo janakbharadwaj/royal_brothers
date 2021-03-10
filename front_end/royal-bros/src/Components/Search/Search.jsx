@@ -1,19 +1,27 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import styles from "./Tarrif.module.css";
 import { Modal, Paper } from "@material-ui/core";
+import styles from "./Search.module.css";
+import { SelectionContext } from "../../Context/SelectionContextProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
-    width: 400,
+    width: 450,
     margin: " 200px auto",
   },
-  paper: {},
 }));
-function Search() {
-  const classes = useStyles();
 
+function Search({ modalOpen, setModalOpen }) {
+  const classes = useStyles();
+  const {
+    onSubmitHandler,
+    onChangeHandler,
+    info,
+    selectedBike,
+  } = React.useContext(SelectionContext);
+  const { pickupDate, pickupTime, dropDate, dropTime } = info;
+  // console.log(selectedBike);
   return (
     <Modal
       className={classes.root}
@@ -22,26 +30,51 @@ function Search() {
       aria-labelledby="simple-modal-title"
       aria-describedby="simple-modal-description"
     >
-      <Paper>
+      <Paper className={styles.Search}>
         <h1>Search your next ride</h1>
-        <label>Pickup</label>
-        <div>
-          <div>
-            <input type="date"></input>
+        <form onSubmit={onSubmitHandler}>
+          <label>Pickup</label>
+          <div className={styles.Search__element}>
+            <div>
+              <input
+                onChange={onChangeHandler}
+                value={pickupDate}
+                name="pickupDate"
+                type="date"
+              ></input>
+            </div>
+            <div>
+              <input
+                onChange={onChangeHandler}
+                name="pickupTime"
+                value={pickupTime}
+                type="time"
+              ></input>
+            </div>
           </div>
-          <div>
-            <input type="time"></input>
+          <label>DropOff</label>
+          <div className={styles.Search__element}>
+            <div>
+              <input
+                onChange={onChangeHandler}
+                name="dropDate"
+                value={dropDate}
+                type="date"
+              ></input>
+            </div>
+            <div>
+              <input
+                onChange={onChangeHandler}
+                name="dropTime"
+                value={dropTime}
+                type="time"
+              ></input>
+            </div>
           </div>
-        </div>
-        <label>DropOff</label>
-        <div>
-          <div>
-            <input type="date"></input>
+          <div className={styles.Search__element}>
+            <button type="submit">Search</button>
           </div>
-          <div>
-            <input type="time"></input>
-          </div>
-        </div>
+        </form>
       </Paper>
     </Modal>
   );
