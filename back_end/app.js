@@ -2,7 +2,9 @@ require("dotenv/config");
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const { check, validationResult } = require("express-validator");
 const port = "8080";
+const User = require("./Auth/userSchema");
 
 app.use(express.json());
 
@@ -22,24 +24,12 @@ const bikeSchema = mongoose.Schema({
   kilometer_limit: Number,
   locationId: String,
 });
-// {
-//   type: mongoose.Schema.Types.ObjectId,
-//   ref: "locations",
-//   required: true,
-// },
 
 const Bikes = mongoose.model("bikes", bikeSchema);
 
 app.get("/bikes", async (req, res) => {
   const bikes = await Bikes.find({}).lean().exec();
   res.status(200).json({ data: bikes });
-});
-
-app.get("/bikes/:id", async (req, res) => {
-  console.log(req.params.id);
-  const bikes = await Bikes.find({ locationId: req.params.id }).lean().exec();
-  const location = await LocationBikes.findById(req.params.id);
-  res.status(200).json({ location, bikes });
 });
 
 //location
@@ -59,13 +49,89 @@ app.get("/location", async (req, res) => {
   res.status(200).json({ data: location });
 });
 
-// app.get("/location/:id", async (req, res) => {
-//   const output = await LocationBikes.findById(req.params.id)
-//     .populate("bikes")
-//     .lean()
-//     .exec();
-//   res.status(200).json({ data: output });
-// });
+//user auth
+
+//signup
+app.post(
+  "/users/signup",
+  [
+    check("email", "Please enter a valid email").isEmail(),
+    check(
+      "password",
+      "Password should consist of minimum 8 characters"
+    ).isLength({
+      min: 8,
+    }),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    console.log(errors);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        errors: errors.array(),
+      });
+    }
+
+    const { first_name, last_name, email, password } = req.body;
+
+    let user = await User.findOne({
+      email,
+    });
+    if (user) {
+      return res.status(400).json({
+        message: "User already exists",
+      });
+    }
+
+    user = await User.create({
+      first_name,
+      last_name,
+      email,
+      password,
+    });
+
+    res
+      .status(200)
+      .json({ message: "Registration Successful", userId: user.id });
+  }
+);
+
+//login
+app.post(
+  "/users/login",
+  [
+    check("email", "Please enter a valid email").isEmail(),
+    check("password", "Invalid password").isLength({
+      min: 8,
+    }),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        errors: errors.array(),
+      });
+    }
+
+    const { email, password } = req.body;
+
+    let user = await User.findOne({
+      email,
+    });
+    if (!user) {
+      return res.status(400).json({
+        message: "User does not exist",
+      });
+    }
+
+    if (user.password !== password) {
+      return res.status(400).json({
+        message: "Incorrect Password",
+      });
+    }
+    res.status(200).json({ message: "Login  Successful", userId: user.id });
+  }
+);
 
 async function start() {
   await connect();
