@@ -1,42 +1,21 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import styles from "./BikesFilter.module.css"
 
  const BikesFilter = ({pickUpDate,pickUpTime,dropOffDate,dropOffTime,handleUpdateDateTiming}) => {
-    const useStyles = makeStyles((theme) => ({
-        container: {
-          display: 'flex',
-          flexWrap: 'wrap',
-        },
-        textField: {
-          marginLeft: theme.spacing(1),
-          marginRight: theme.spacing(1),
-          width: 200,
-        },
-      }));
-      const classes = useStyles();
-
-      
-
+   
     return (
         <div>
             <p>select date and time</p>
                 
                 <div className={styles.date__time}>
-                <form className={classes.container} noValidate>
-                  <TextField
-                    id="date"
-                    label="Pickup date"
-                    type="date"
-                    value={pickUpDate}
-                    name="pickUpDate"
-                    className={classes.textField}
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                  />
-                </form>
+                    <label>
+                        pickup Date<br/>
+                        <input type="date"
+                        name="pickUpDate"
+                         placeholder="pickup date"
+                         value={pickUpDate}
+                         onChange={handleUpdateDateTiming}/>
+                    </label>
                     <label>
                         Time<br/>
                         <input type="time"
@@ -47,28 +26,32 @@ import styles from "./BikesFilter.module.css"
                     </label>
                 </div>
                 <div className={styles.date__time}>
-                <form className={classes.container} noValidate>
-                  <TextField
-                    id="date"
-                    label="Birthday"
-                    type="date"
-                    name="dropOffDate"
-                    value={dropOffDate}
-                    
-                    className={classes.textField}
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
-                  />
-                </form>
+                    <label>
+                        DropOff Date<br/>
+                        <input type="date"
+                        name="dropOffDate"
+                         placeholder="pickup date"
+                         value={dropOffDate}
+                         onChange={handleUpdateDateTiming}/>
+                    </label>
                     <label>
                         Time<br/>
-                        <input type="date"
+                        <input type="time"
                         name="dropOffTime"
                          placeholder="pickup date"
                          value={dropOffTime}
                          onChange={handleUpdateDateTiming}/>
                     </label>
+                </div>
+                <div>
+                  <p>Search Duration</p>
+                  3 days 30 minutes
+                  <p>Search By location</p>
+                  <select>
+                    {["IndiraNagar","koramangala"].map((city,index)=>
+                    <option key={index} value={city}>{city}</option>)}
+                  </select>
+
                 </div>
                 
         </div>
