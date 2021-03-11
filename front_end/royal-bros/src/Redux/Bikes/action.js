@@ -26,7 +26,7 @@ const getHostsFailure=()=>{
 const getBikes=(id)=>(dispatch)=>{
     dispatch(getBikesRequest())
     return axios.get(`http://localhost:8080/location/${id}/bikes`)
-    .then((res)=>dispatch(getBikesSuccess(res.data.data)))
+    .then((res)=>dispatch(getBikesSuccess(res.data.data.bikes)))
     .catch((err)=>dispatch(getHostsFailure()))
     
 }
