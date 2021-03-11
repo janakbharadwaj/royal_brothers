@@ -2,6 +2,7 @@ import React from 'react'
 import {Switch, Route} from 'react-router-dom';
 import Bikes from '../Components/Bikes/Bikes';
 import { RoyalBrosX } from '../Components/RoyalBrosX/RoyalBrosX';
+import { RoyalBrosXSearch } from '../Components/RoyalBrosX/RoyalBrosXSearch';
 import Tarrif from '../Components/Tarrif/Tarrif';
 
 const Routes = () => {
@@ -27,7 +28,10 @@ const Routes = () => {
                 <Bikes/>
               </Route>
               <Route path='/royalbrothersX' exact>
-                <RoyalBrosX/>
+                <RoyalBrosXSearch/>
+              </Route>
+              <Route path='/royalXSearch' exact>
+                <h2>royal x search </h2>
               </Route>
               <Route path='/testRideAther' exact>
                 <h2>test ride ather</h2>

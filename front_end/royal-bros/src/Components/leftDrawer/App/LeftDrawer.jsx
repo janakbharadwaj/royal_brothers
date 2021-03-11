@@ -8,9 +8,9 @@ function LeftDrawer() {
   return (
     <>
       <SiteLayout>
-        <Switch>
+        {/* <Switch>
           <Route path='/tarrif' exact render={()=><Tarrif></Tarrif>}/>
-        </Switch>
+        </Switch> */}
       </SiteLayout>
     </>
   );
