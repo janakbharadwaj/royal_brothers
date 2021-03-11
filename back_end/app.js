@@ -41,6 +41,12 @@ app.get("/bikes", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+app.get("/bikes/:id", async (req, res) => {
+  const bikeId = req.params.id;
+  const bikes = await Bikes.findById(bikeId).lean().exec();
+  res.status(200).json({ data: bikes });
+});
+
 //user auth
 
 //signup

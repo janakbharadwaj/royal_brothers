@@ -3,12 +3,14 @@ import thunk from "redux-thunk";
 import { tarrifReducer } from "./Tarrif/TarrifReducer";
 import bikeReducer from "./Bikes/bikeReducer";
 import { authReducer } from "./Auth/authReducer";
+import royalBrosXReducer from './RoyalBrosX/royalBrosXReducer';
 import bikeFilterReducer from "./BikesFilter/reducer"
 const rootReducer = combineReducers({
   tarrifReducer,
   bikes: bikeReducer,
   authReducer,
-  bikesFilter:bikeFilterReducer
+  bikesFilter:bikeFilterReducer,
+  royalBrosXReducer:royalBrosXReducer
 });
 
 let composeEnhancers = compose;
