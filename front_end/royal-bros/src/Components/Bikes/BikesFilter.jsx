@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./BikesFilter.module.css"
+import TimeConversion from "./utils"
 
  const BikesFilter = ({pickUpDate,pickUpTime,dropOffDate,dropOffTime,handleUpdateDateTiming}) => {
    
@@ -45,7 +46,7 @@ import styles from "./BikesFilter.module.css"
                 </div>
                 <div>
                   <p>Search Duration</p>
-                  3 days 30 minutes
+                  <p>{(pickUpDate&&dropOffDate)&&TimeConversion(pickUpDate,dropOffDate)}</p>
                   <p>Search By location</p>
                   <select>
                     {["IndiraNagar","koramangala"].map((city,index)=>
