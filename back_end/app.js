@@ -141,6 +141,11 @@ app.get("/location/:locationid/bikes", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+app.post("/filters/bikes", async (req,res)=>{
+  const arr=req.body
+  const bikes=await Bikes.find({bike_name:{$in:arr}}).lean().exec()
+  res.status(200).json(bikes)
+})
 async function start() {
   await connect();
   app.listen(port, () => {
