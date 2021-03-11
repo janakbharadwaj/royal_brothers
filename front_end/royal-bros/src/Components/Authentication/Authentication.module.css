@@ -1,6 +1,7 @@
 .Authentication {
   max-width: 550px;
   margin: 100px auto;
+  min-height: 60vh;
 }
 
 .Authentication * {

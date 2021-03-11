@@ -1,28 +1,55 @@
 import axios from "axios";
 import * as actionTypes from "./ActionTypes";
 
-const getBikesRequest = () => {
+const getLocationRequest = () => {
   return {
-    type: actionTypes.GET_BIKES_REQUEST,
+    type: actionTypes.GET_LOCATION_REQUEST,
   };
 };
 
-const getBikesSuccess = (data) => {
+const getLocationSuccess = (data) => {
   return {
-    type: actionTypes.GET_BIKES_SUCCESS,
+    type: actionTypes.GET_LOCATION_SUCCESS,
     data,
   };
 };
-const getBikesFailure = () => {
+const getLocationFailure = () => {
   return {
-    type: actionTypes.GET_BIKES_FAILURE,
+    type: actionTypes.GET_LOCATION_FAILURE,
   };
 };
 
-export const getBikesHandler = () => (dispatch) => {
-  dispatch(getBikesRequest());
+export const getLocationHandler = (search) => (dispatch) => {
+  dispatch(getLocationRequest());
   return axios
-    .get("http://localhost:8080/bikes")
-    .then((res) => dispatch(getBikesSuccess(res.data.data)))
-    .catch((err) => getBikesFailure());
+    .get(`http://localhost:8080/locations/${search}`)
+    .then((res) => dispatch(getLocationSuccess(res.data)))
+    .catch((err) => getLocationFailure());
+};
+
+//Choosing a location from the modal
+const chooseLocationRequest = () => {
+  return {
+    type: actionTypes.CHOOSE_LOCATION_REQUEST,
+  };
+};
+
+const chooseLocationSuccess = (data) => {
+  return {
+    type: actionTypes.CHOOSE_LOCATION_SUCCESS,
+    data,
+  };
+};
+const chooseLocationFailure = () => {
+  return {
+    type: actionTypes.CHOOSE_LOCATION_FAILURE,
+  };
+};
+
+export const chooseLocationHandler = (id) => (dispatch) => {
+  dispatch(chooseLocationRequest());
+  return axios
+    .get(`http://localhost:8080/location/${id}/bikes`)
+    .then((res) => dispatch(chooseLocationSuccess(res.data.data)))
+    .catch((err) => dispatch(chooseLocationFailure()));
 };

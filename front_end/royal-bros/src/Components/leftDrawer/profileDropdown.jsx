@@ -21,7 +21,7 @@ class OverlayVisible extends React.Component {
 
   render() {
     const menu = (
-      <Menu onClick={this.handleMenuClick}>
+      <Menu style={{ width: "170px" }} onClick={this.handleMenuClick}>
         <br />
         <Menu.Item key="1">
           <Link to="/orders">My Rides</Link>

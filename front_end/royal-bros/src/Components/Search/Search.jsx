@@ -25,8 +25,6 @@ function Search({ modalOpen, setModalOpen }) {
       className={classes.root}
       open={modalOpen}
       onClose={() => setModalOpen(false)}
-      aria-labelledby="simple-modal-title"
-      aria-describedby="simple-modal-description"
     >
       <Paper className={styles.Search}>
         <h1>Search your next ride</h1>
