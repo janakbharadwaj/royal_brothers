@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom';
 import Bikes from '../Components/Bikes/Bikes';
+import { RoyalBrosX } from '../Components/RoyalBrosX/RoyalBrosX';
 import Tarrif from '../Components/Tarrif/Tarrif';
 
 const Routes = () => {
@@ -26,7 +27,7 @@ const Routes = () => {
                 <Bikes/>
               </Route>
               <Route path='/royalbrothersX' exact>
-                <h2>royal bros</h2>
+                <RoyalBrosX/>
               </Route>
               <Route path='/testRideAther' exact>
                 <h2>test ride ather</h2>
