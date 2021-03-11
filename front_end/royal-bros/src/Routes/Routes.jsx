@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Authentication from "../Components/Authentication/Authentication";
 import Bikes from "../Components/Bikes/Bikes";
 import Home from "../Components/Home/Home";
+import Payment from "../Components/Payment/Payment";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
 
@@ -32,7 +33,7 @@ const Routes = () => {
           <h2>royal bros search</h2>
         </Route>
         <Route path="/royalbrothersX" exact>
-          <RoyalBrosXSearch/>
+          <RoyalBrosXSearch />
         </Route>
         <Route path="/testRideAther" exact>
           <h2>test ride ather</h2>
@@ -51,6 +52,9 @@ const Routes = () => {
         </Route>
         <Route path="/authentication" exact>
           <Authentication></Authentication>
+        </Route>
+        <Route path="/payment" exact>
+          <Payment></Payment>
         </Route>
         <Route>
           <h2>Page Not Found</h2>

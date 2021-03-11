@@ -26,6 +26,7 @@
   margin-right: 3%;
   color: rgb(56, 54, 54);
   padding: 0.8%;
+  font-weight: 600;
 }
 
 .tarrifLink:hover {
@@ -80,8 +81,9 @@
   width: 160px;
   margin-left: 50px;
   cursor: pointer;
-  padding: 5px 5px 5px 15px;
   border-radius: 5px;
+  position: relative;
+  padding: 15px;
 }
 
 .profile:hover {

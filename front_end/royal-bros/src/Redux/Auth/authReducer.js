@@ -3,7 +3,7 @@ import * as actionTypes from "./ActionTypes";
 const initState = {
   isLoading: false,
   isError: false,
-  isAuth: false,
+  isAuth: true,
   userData: {},
   signupRes: "",
   loginRes: "",
@@ -51,6 +51,14 @@ export const authReducer = (state = initState, { type, data }) => {
         ...state,
         isLoading: false,
         isError: true,
+      };
+    }
+
+    case actionTypes.LOGOUT: {
+      return {
+        isAuth: "",
+        userData: "",
+        loginRes: "",
       };
     }
 

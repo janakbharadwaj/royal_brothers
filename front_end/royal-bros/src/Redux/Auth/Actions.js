@@ -54,3 +54,10 @@ export const loginHandler = (payload) => (dispatch) => {
     .then((res) => dispatch(loginSuccess(res.data)))
     .catch((err) => dispatch(loginFailure()));
 };
+
+//logout
+export const logoutHandler = () => {
+  return {
+    type: actionTypes.LOGOUT,
+  };
+};
