@@ -1,8 +1,18 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
+import { useSelector, useDispatch } from "react-redux";
+import FleetCard from "./FleetCard";
+import { getBikesHandler } from "../../Redux/Tarrif/Actions";
 
 function Home() {
+  const allBikes = useSelector((state) => state.tarrifReducer.data);
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(getBikesHandler());
+  }, []);
+
   const { onSubmitHandler, onChangeHandler, info } = React.useContext(
     SelectionContext
   );
@@ -98,11 +108,41 @@ function Home() {
         </div>
       </div>
       <div className={styles.Home__rentals}>
+        <div className={styles.Home__rentals__sub}>Introducing</div>
+        <div className={styles.Home__rentals__main}>
+          Royal Brothers <span>X</span>
+        </div>
+        <div className={styles.Home__rentals__desc}>
+          <div></div>
+          <div>
+            <p>Now rent vehicles on monthly subscription (1-9 months)</p>
+            <ul>
+              <li>Pay per month</li>
+              <li>Free home delivery</li>
+              <li>Sanitized bikes</li>
+              <li>Free maintenance</li>
+            </ul>
+            <button>Explore</button>
+          </div>
+        </div>
         <div className={styles.Home__rentals__biker}>
           <img
             src="https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/rbx_bike-0a229b31c998adf63b64a9f60efb6e33d52aac58a2192ad196122625129c9fef.png"
             alt="biker"
           ></img>
+        </div>
+      </div>
+      <div className={styles.Home__fleet}>
+        <div className={styles.Home__fleet__head}>
+          <h1>Our Fleet</h1>
+          <div className={styles.Home__bar}></div>
+        </div>
+        <div className={styles.Home_fleet_cards}>
+          {allBikes
+            ?.filter((_, index) => index < 4)
+            .map((item) => (
+              <FleetCard key={item._id} {...item}></FleetCard>
+            ))}
         </div>
       </div>
     </div>

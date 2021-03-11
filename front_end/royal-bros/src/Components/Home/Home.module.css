@@ -92,6 +92,114 @@
 
 .Home__rentals__biker {
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: 40%;
+  left: 28%;
+  transform: translate(-30%, -8%);
+}
+
+.Home__rentals__sub {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  line-height: 30px;
+  padding-top: 30px;
+}
+
+.Home__rentals__main {
+  font-size: 6vw;
+  font-weight: 700;
+  line-height: 100px;
+  color: white;
+  margin: 0;
+  font-style: italic;
+}
+
+.Home__rentals__main > span {
+  font-size: 7vw;
+  color: #fed250;
+}
+
+.Home__rentals__desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  margin: 100px auto;
+}
+
+.Home__rentals__desc > div {
+  width: 100%;
+  max-width: 480px;
+}
+
+.Home__rentals__desc p {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.Home__rentals__desc ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Home__rentals__desc ul > li {
+  width: 50%;
+  font-size: 17px;
+  line-height: 35px;
+}
+
+.Home__rentals__desc button {
+  width: 90%;
+  padding: 5px;
+  font-size: 21px;
+  color: black;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.Home__rentals__desc button:hover {
+  background-color: #fed250;
+}
+
+.Home__fleet {
+  margin-top: 150px;
+}
+
+.Home__fleet__head {
+  margin: auto;
+  width: 300px;
+}
+
+.Home__fleet__head h1 {
+  line-height: 22px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 29px;
+}
+
+.Home__bar {
+  border-bottom: 4px solid yellow;
+  width: 100px;
+  margin: auto;
+}
+
+.Home_fleet_cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1600px;
+  margin: 50px auto;
+}
+
+.Home_fleet_cards > div {
+  width: 22%;
+}
+
+.Fleet__solo__card {
+  box-shadow: 2px 2px 5px rgb(192, 192, 192);
+  border-radius: 5px;
+  width: 100%;
+  min-width: 350px;
 }
