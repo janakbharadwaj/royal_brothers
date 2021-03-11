@@ -25,7 +25,7 @@ const Bikes = () => {
   };
 
   const handleGet = () => {
-    dispatch(getBikes());
+    dispatch(getBikes("60489b1667b6df5e649d9670"));
   };
   React.useEffect(() => {
     handleGet();
