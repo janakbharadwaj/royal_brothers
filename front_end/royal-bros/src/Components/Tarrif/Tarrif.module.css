@@ -17,6 +17,7 @@
   border-radius: 5px;
   margin: 10px;
   min-width: 430px;
+  padding-top: 15px;
 }
 
 .BikeCard h2 {
@@ -55,10 +56,10 @@
 }
 
 .BikeCard__panel {
-  height: 250px;
+  height: 310px;
   padding: 30px;
   text-align: left;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .BikeCard__button {

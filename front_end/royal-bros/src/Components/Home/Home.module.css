@@ -1,0 +1,259 @@
+.Home {
+}
+
+.Home__header {
+  margin-top: -20px;
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/home_back_june-760c94ec6cba24f16e94abd16473fa36629ac92468a73289bbefba546692f877.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 100px;
+}
+
+.Search {
+  text-align: left;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgb(209, 206, 206);
+  padding: 25px;
+  font-family: "Mulish", sans-serif;
+  outline: none;
+  border-radius: 5px;
+}
+.Search__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search__element > div {
+  width: 50%;
+  margin: 15px auto;
+}
+
+.Search label {
+  font-weight: 800;
+}
+
+.Search__element input {
+  width: 90%;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 0.5px solid rgb(228, 225, 225);
+  margin: 5px auto;
+  color: rgb(80, 75, 75);
+}
+
+.Search__element > button {
+  width: 100%;
+  font-size: 17px;
+  padding: 10px;
+  margin: 25px auto 25px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-family: "Mulish", sans-serif;
+  background-color: #fed250;
+}
+
+.Home__services__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+}
+
+.Home__services__foot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Home__services__foot > div {
+  margin: 10px 40px;
+}
+
+.Home__services__foot img {
+  margin: 15px;
+}
+
+.Home__rentals {
+  background: linear-gradient(to right, #537895, #09203f);
+  height: 60vh;
+  width: 100%;
+  position: relative;
+}
+
+.Home__rentals__biker {
+  position: absolute;
+  top: 40%;
+  left: 28%;
+  transform: translate(-30%, -8%);
+}
+
+.Home__rentals__sub {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  line-height: 30px;
+  padding-top: 30px;
+}
+
+.Home__rentals__main {
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 100px;
+  color: white;
+  margin: 0;
+  font-style: italic;
+}
+
+.Home__rentals__main > span {
+  font-size: 7vw;
+  color: #fed250;
+}
+
+.Home__rentals__desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  margin: 100px auto;
+}
+
+.Home__rentals__desc > div {
+  width: 100%;
+  max-width: 480px;
+}
+
+.Home__rentals__desc p {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.Home__rentals__desc ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Home__rentals__desc ul > li {
+  width: 50%;
+  font-size: 17px;
+  line-height: 35px;
+}
+
+.Home__rentals__desc button {
+  width: 90%;
+  padding: 5px;
+  font-size: 21px;
+  color: black;
+  border: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.Home__rentals__desc button:hover {
+  background-color: #fed250;
+}
+
+.Home__fleet {
+  margin-top: 150px;
+}
+
+.Home__fleet__head {
+  margin: 100px auto 50px;
+  width: 400px;
+}
+
+.Home__fleet__head h1 {
+  line-height: 22px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 29px;
+}
+
+.Home__bar {
+  border-bottom: 4px solid yellow;
+  width: 100px;
+  margin: auto;
+}
+
+.Home_fleet_cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1800px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+
+.Home_fleet_cards > div {
+  width: 22%;
+}
+
+.Home_fleet_cards > div:nth-child(4)::after {
+  background-blend-mode: darken;
+}
+
+.Fleet__solo__card {
+  box-shadow: 2px 2px 5px rgb(192, 192, 192);
+  border-radius: 5px;
+  width: 100%;
+  min-width: 350px;
+  background-color: #f7fafc;
+  margin: 10px;
+}
+
+.Fleet__solo__card p {
+  font-weight: 600;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.Fleet__solo__card hr {
+  border: 1px solid rgb(195, 187, 187);
+}
+
+.Fleet__solo__card h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.Fleet__solo__card button {
+  width: 100%;
+  background-color: #fed250;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+}
+
+.Fleet__solo__card button:hover {
+  background-color: #ffc400;
+}
+
+.Carousel__solo {
+  width: 100%;
+}
+
+.Carousel__dots {
+  color: black;
+  background-color: red;
+}
+
+.Carousel__solo img {
+  width: 100%;
+}

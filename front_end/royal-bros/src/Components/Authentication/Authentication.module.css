@@ -1,0 +1,72 @@
+.Authentication {
+  max-width: 550px;
+  margin: 100px auto;
+  min-height: 60vh;
+}
+
+.Authentication * {
+  transition: all 0.5s ease-out;
+}
+
+.Authentication h1 {
+  font-size: 29px;
+  font-weight: 600;
+}
+
+.Authentication__main {
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgb(216, 212, 212);
+}
+
+.Authentication__nav {
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.Authentication__nav div {
+  width: 100%;
+  border-bottom: 1px solid rgb(228, 225, 225);
+}
+
+.Authentication__nav div button {
+  width: 100%;
+  font-size: 19px;
+  padding: 15px;
+  background-color: white;
+  border: none;
+  color: grey;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.Authentication__form {
+  padding: 0px 30px 30px 30px;
+  text-align: left;
+}
+
+.Authentication__form label {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.Authentication__button {
+  width: 100%;
+  background-color: #fed250;
+  padding: 7px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+}
+
+.Authentication__button:hover {
+  background-color: #ffc400;
+}

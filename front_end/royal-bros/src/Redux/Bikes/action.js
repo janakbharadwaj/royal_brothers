@@ -23,10 +23,10 @@ const getHostsFailure=()=>{
         }
     )
 }
-const getBikes=()=>(dispatch)=>{
+const getBikes=(id)=>(dispatch)=>{
     dispatch(getBikesRequest())
-    return axios.get("https://json-server-mock-react-sahil.herokuapp.com/bikes")
-    .then((res)=>dispatch(getBikesSuccess(res.data)))
+    return axios.get(`http://localhost:8080/location/${id}/bikes`)
+    .then((res)=>dispatch(getBikesSuccess(res.data.data.bikes)))
     .catch((err)=>dispatch(getHostsFailure()))
     
 }

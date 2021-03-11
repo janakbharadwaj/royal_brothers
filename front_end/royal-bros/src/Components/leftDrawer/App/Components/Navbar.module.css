@@ -1,92 +1,103 @@
-.navbarLinks{
-    border: 1px solid gray;
-    background-color: white;
+.navbarLinks {
+  border: 1px solid gray;
+  background-color: white;
 }
 
-.navbar{
-    background-color: white;
+.navbar {
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.homeLogo{
-    width: 70%;
-    margin: 0px 0px 0px 0px;
-    /* border: 1px solid black; */
-    position: relative;
-    left: -50px;
+.homeLogo {
+  width: 70%;
+  margin: 0px 0px 0px 0px;
+  /* border: 1px solid black; */
+  position: relative;
+  left: -50px;
 }
 
 .tarrifLink,
 .whatsNewLink,
 .offersLink,
 .partnerWithUsLink,
-.searchLink{
-    text-decoration: none;
-    margin-right: 3%;
-    color: rgb(56, 54, 54);
-    padding: 0.8%;
+.searchLink {
+  text-decoration: none;
+  margin-right: 3%;
+  color: rgb(56, 54, 54);
+  padding: 0.8%;
 }
 
-.tarrifLink:hover{background-color: rgb(254,210,80);}
-.whatsNewLink:hover{background-color: rgb(254,210,80);}
-.offersLink:hover{background-color: rgb(254,210,80);}
-.partnerWithUsLink:hover{background-color: rgb(254,210,80);}
-.searchLink:hover{background-color: rgb(254,210,80);}
-
-.abc{
-    margin-top: 10%;
-    border-bottom: 1px solid rgba(206, 198, 198, 0.527);
-    padding-bottom: 5px;
+.tarrifLink:hover {
+  background-color: rgb(254, 210, 80);
+}
+.whatsNewLink:hover {
+  background-color: rgb(254, 210, 80);
+}
+.offersLink:hover {
+  background-color: rgb(254, 210, 80);
+}
+.partnerWithUsLink:hover {
+  background-color: rgb(254, 210, 80);
+}
+.searchLink:hover {
+  background-color: rgb(254, 210, 80);
 }
 
-.locationBtn{
-    padding: 4px 0px 10px 10px;
-    width: 130px;
-    display: flex;
-    height: 35px;
-    outline: none;
-    border: 2px solid rgb(254,210,80);
-    border-radius: 5px;
-    background-color: white;
-    margin-left: 140px;
-    cursor: pointer;
+/* .abc {
+  margin-top: 10%;
+  border-bottom: 1px solid rgba(206, 198, 198, 0.527);
+  padding-bottom: 5px;
+} */
+
+.locationBtn {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  outline: none;
+  border: 2px solid rgb(254, 210, 80);
+  border-radius: 5px;
+  background-color: white;
+
+  cursor: pointer;
 }
 
-.locationBtn span{
-    font-size: 16px;
-    font-weight: 100;
-    margin: 2px 5px 0px 10px;
+.locationBtn span {
+  font-size: 16px;
+  font-weight: 100;
+  margin: 2px 5px 0px 10px;
 }
 
-.locationBtn i{
-    margin-top: 6px;
-    margin-left: 5px;
+.locationBtn i {
+  margin-top: 6px;
+  margin-left: 5px;
 }
 
-.profile{
-    /* border: 1px solid black; */
-    display: flex;
-    align-items: center;
-    width: 160px;
-    margin-left: 50px;
-    cursor: pointer;
-    padding: 5px 5px 5px 15px;
-    border-radius: 5px;
+.profile {
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  width: 160px;
+  margin-left: 50px;
+  cursor: pointer;
+  padding: 5px 5px 5px 15px;
+  border-radius: 5px;
 }
 
-.profile:hover{
-    background-color: rgb(254,210,80);
+.profile:hover {
+  background-color: rgb(254, 210, 80);
 }
 
-.profile span{
-    font-size: 18px;
-    margin-left: 15px;
+.profile span {
+  font-size: 18px;
+  margin-left: 15px;
 }
 
-.profile i{
-    margin-left: 10px;
-    margin-top: 5px;
+.profile i {
+  margin-left: 10px;
+  margin-top: 5px;
 }
 
-.profile img{
-    width: 25%;
+.profile img {
+  width: 25%;
 }

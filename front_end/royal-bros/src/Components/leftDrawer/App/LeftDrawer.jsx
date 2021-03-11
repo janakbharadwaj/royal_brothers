@@ -5,15 +5,7 @@ import Tarrif from "../../Tarrif/Tarrif";
 import { SiteLayout } from "./Components/SiteLayout";
 
 function LeftDrawer() {
-  return (
-    <>
-      <SiteLayout>
-        {/* <Switch>
-          <Route path='/tarrif' exact render={()=><Tarrif></Tarrif>}/>
-        </Switch> */}
-      </SiteLayout>
-    </>
-  );
+  return <SiteLayout />;
 }
 
 export { LeftDrawer };

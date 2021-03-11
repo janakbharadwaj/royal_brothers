@@ -1,0 +1,66 @@
+.LocationModal {
+  max-width: 1600px;
+}
+
+.LocationModal {
+  padding: 10px;
+}
+
+.LocationModal__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LocationModal__search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  border: 2px solid rgb(224, 219, 219);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.LocationModal__search i {
+  margin: 5px;
+}
+
+.LocationModal__search input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.LocationModal__cards {
+  width: 100%;
+  display: flex;
+}
+
+.Card {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  position: relative;
+  margin: 15px;
+}
+
+.Card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.Card p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.Card:hover {
+  transform: scale(1.1);
+}

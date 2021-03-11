@@ -3,49 +3,50 @@ import * as actionTypes from "./ActionTypes";
 const initState = {
   isLoading: false,
   isError: false,
-  currentLocation: {},
-  allBikes: [],
-  allLocations: [],
+  isAuth: false,
+  userData: {},
+  signupRes: "",
+  loginRes: "",
 };
 
-export const tarrifReducer = (state = initState, { type, data }) => {
+export const authReducer = (state = initState, { type, data }) => {
   switch (type) {
-    case actionTypes.GET_LOCATION_REQUEST: {
+    case actionTypes.SIGNUP_REQUEST: {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case actionTypes.GET_LOCATION_SUCCESS: {
+    case actionTypes.SIGNUP_SUCCESS: {
       return {
         ...state,
-        allLocations: data.data,
+        signupRes: data,
         isLoading: false,
       };
     }
-    case actionTypes.GET_LOCATION_FAILURE: {
+    case actionTypes.SIGNUP_FAILURE: {
       return {
         ...state,
         isLoading: false,
         isError: true,
       };
     }
-
-    case actionTypes.CHOOSE_LOCATION_REQUEST: {
+    case actionTypes.LOGIN_REQUEST: {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case actionTypes.CHOOSE_LOCATION_SUCCESS: {
+    case actionTypes.LOGIN_SUCCESS: {
       return {
         ...state,
-        currentLocation: data.location,
-        allBikes: data.bikes,
+        isAuth: data.isAuth,
         isLoading: false,
+        userData: data.userData,
+        loginRes: data.message,
       };
     }
-    case actionTypes.CHOOSE_LOCATION_FAILURE: {
+    case actionTypes.LOGIN_FAILURE: {
       return {
         ...state,
         isLoading: false,
