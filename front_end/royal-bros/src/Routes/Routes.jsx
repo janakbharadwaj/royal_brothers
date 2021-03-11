@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Authentication from "../Components/Authentication/Authentication";
 import Bikes from "../Components/Bikes/Bikes";
 import Home from "../Components/Home/Home";
+import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
 
 const Routes = () => {
@@ -27,8 +28,11 @@ const Routes = () => {
         <Route path="/search" exact>
           <Bikes />
         </Route>
+        <Route path="/royalXSearch" exact>
+          <h2>royal bros search</h2>
+        </Route>
         <Route path="/royalbrothersX" exact>
-          <h2>royal bros</h2>
+          <RoyalBrosXSearch/>
         </Route>
         <Route path="/testRideAther" exact>
           <h2>test ride ather</h2>
