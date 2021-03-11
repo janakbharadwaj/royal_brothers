@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Authentication from "../Components/Authentication/Authentication";
 import Bikes from "../Components/Bikes/Bikes";
 import Home from "../Components/Home/Home";
+import { RoyalBrosIndBike } from "../Components/RoyalBrosX/RoyalBrosIndBike";
+import { RoyalBrosXResults } from "../Components/RoyalBrosX/RoyalBrosXResults";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
 
@@ -29,10 +31,13 @@ const Routes = () => {
           <Bikes />
         </Route>
         <Route path="/royalXSearch" exact>
-          <h2>royal bros search</h2>
+          <RoyalBrosXResults/>
         </Route>
         <Route path="/royalbrothersX" exact>
           <RoyalBrosXSearch/>
+        </Route>
+        <Route path="/royalXSearch/:id" exact>
+          <RoyalBrosIndBike/>
         </Route>
         <Route path="/testRideAther" exact>
           <h2>test ride ather</h2>
