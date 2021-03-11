@@ -24,6 +24,7 @@ function SelectionContextProvider({ children }) {
   const history = useHistory();
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
+    console.log(value);
     setInfo({ ...info, [name]: value });
   };
 

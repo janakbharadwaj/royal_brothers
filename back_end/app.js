@@ -147,6 +147,31 @@ app.post("/filters/bikes", async (req, res) => {
     .exec();
   res.status(200).json(bikes);
 });
+
+//for rentals
+const rentalsSchema = mongoose.Schema({
+  bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+  pickup_date: Date,
+  pickup_time: String,
+  drop_date: Date,
+  drop_time: String,
+});
+
+const Rentals = mongoose.model("rentals", rentalsSchema);
+
+app.get("/rentals/:id", async (req, res) => {
+  const rentals = await Rentals.find({ _id: "604a23ccc52fdf0494b5c0d0" })
+    .populate("bikes")
+    .populate("users")
+    .exec();
+
+  // const rentals = await Rentals.find({ userId: req.params.id }).exec();
+  // const bikes = await Bikes.find({ _id: rentals[0].bikeId });
+  res.status(200).json(rentals);
+});
+
+// Starting the server
 async function start() {
   await connect();
   app.listen(port, () => {

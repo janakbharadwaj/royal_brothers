@@ -96,6 +96,7 @@ function Navbar(props) {
   const currentLocation = useSelector(
     (state) => state.tarrifReducer.currentLocation
   );
+  const userData = useSelector((state) => state.authReducer.userData);
   const isAuth = useSelector((state) => state.authReducer.isAuth);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
@@ -190,7 +191,7 @@ function Navbar(props) {
                   src="https://d36g7qg6pk2cm7.cloudfront.net/assets/profile-f17aa1dfbd0cb562142f1dcb10bb7ad33e1ac8417ad29a1cdab7dfbfbbfe2f15.png"
                   alt="profile"
                 />
-                <span>User</span>
+                <span>{userData.first_name || "User"}</span>
                 <i className="fas fa-chevron-down"></i>
                 {dropDown && (
                   <ProfileDropdown

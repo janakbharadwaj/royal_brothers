@@ -6,6 +6,7 @@ import Home from "../Components/Home/Home";
 import Payment from "../Components/Payment/Payment";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
+import Orders from "../Components/User/Orders";
 
 const Routes = () => {
   return (
@@ -45,7 +46,7 @@ const Routes = () => {
           <h2>reach Us</h2>
         </Route>
         <Route path="/orders" exact>
-          <h2>my rides</h2>
+          <Orders></Orders>
         </Route>
         <Route path="/users" exact>
           <h2>my profile</h2>

@@ -3,7 +3,7 @@ import * as actionTypes from "./ActionTypes";
 const initState = {
   isLoading: false,
   isError: false,
-  isAuth: true,
+  isAuth: false,
   userData: {},
   signupRes: "",
   loginRes: "",
