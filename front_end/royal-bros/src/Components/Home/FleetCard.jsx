@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./Home.module.css";
 
 function FleetCard({ bike_name, bike_image, hourly_rate }) {
-  console.log(bike_name, "bike_name");
   return (
     <div className={styles.Fleet__solo__card}>
       <p>{bike_name}</p>

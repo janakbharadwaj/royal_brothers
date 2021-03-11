@@ -106,7 +106,7 @@
 }
 
 .Home__rentals__main {
-  font-size: 6vw;
+  font-size: 5vw;
   font-weight: 700;
   line-height: 100px;
   color: white;
@@ -167,8 +167,8 @@
 }
 
 .Home__fleet__head {
-  margin: auto;
-  width: 300px;
+  margin: 100px auto 50px;
+  width: 400px;
 }
 
 .Home__fleet__head h1 {
@@ -189,12 +189,17 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1800px;
   margin: 50px auto;
+  flex-wrap: wrap;
 }
 
 .Home_fleet_cards > div {
   width: 22%;
+}
+
+.Home_fleet_cards > div:nth-child(4)::after {
+  background-blend-mode: darken;
 }
 
 .Fleet__solo__card {
@@ -202,4 +207,53 @@
   border-radius: 5px;
   width: 100%;
   min-width: 350px;
+  background-color: #f7fafc;
+  margin: 10px;
+}
+
+.Fleet__solo__card p {
+  font-weight: 600;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.Fleet__solo__card hr {
+  border: 1px solid rgb(195, 187, 187);
+}
+
+.Fleet__solo__card h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.Fleet__solo__card button {
+  width: 100%;
+  background-color: #fed250;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+}
+
+.Fleet__solo__card button:hover {
+  background-color: #ffc400;
+}
+
+.Carousel__solo {
+  width: 100%;
+}
+
+.Carousel__dots {
+  color: black;
+  background-color: red;
+}
+
+.Carousel__solo img {
+  width: 100%;
 }

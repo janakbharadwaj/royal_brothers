@@ -4,14 +4,21 @@ import { SelectionContext } from "../../Context/SelectionContextProvider";
 import { useSelector, useDispatch } from "react-redux";
 import FleetCard from "./FleetCard";
 import { getBikesHandler } from "../../Redux/Tarrif/Actions";
+import HomeCarousel from "./HomeCarousel";
+import { useHistory } from "react-router";
 
 function Home() {
   const allBikes = useSelector((state) => state.tarrifReducer.data);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   React.useEffect(() => {
     dispatch(getBikesHandler());
   }, []);
+
+  const exploreHandler = () => {
+    history.push("/search");
+  };
 
   const { onSubmitHandler, onChangeHandler, info } = React.useContext(
     SelectionContext
@@ -122,7 +129,7 @@ function Home() {
               <li>Sanitized bikes</li>
               <li>Free maintenance</li>
             </ul>
-            <button>Explore</button>
+            <button onClick={exploreHandler}>Explore</button>
           </div>
         </div>
         <div className={styles.Home__rentals__biker}>
@@ -144,6 +151,13 @@ function Home() {
               <FleetCard key={item._id} {...item}></FleetCard>
             ))}
         </div>
+      </div>
+      <div className={styles.Home__believe}>
+        <div className={styles.Home__fleet__head}>
+          <h1>We believe in quality</h1>
+          <div className={styles.Home__bar}></div>
+        </div>
+        <HomeCarousel></HomeCarousel>
       </div>
     </div>
   );
