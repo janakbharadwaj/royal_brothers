@@ -9,7 +9,7 @@ import Card from "./Card";
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
-    margin: " 200px auto",
+    margin: "5vh auto",
   },
   paper: {
     width: "100%",

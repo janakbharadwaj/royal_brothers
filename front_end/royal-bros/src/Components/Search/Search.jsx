@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
     width: 450,
-    margin: " 200px auto",
+    margin: "5vh auto",
   },
 }));
 
