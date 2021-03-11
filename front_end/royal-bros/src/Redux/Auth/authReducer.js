@@ -6,6 +6,7 @@ const initState = {
   isAuth: false,
   userData: {},
   signupRes: "",
+  loginRes: "",
 };
 
 export const authReducer = (state = initState, { type, data }) => {

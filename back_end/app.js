@@ -41,23 +41,6 @@ app.get("/bikes", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
-//location
-
-// const locationBikesSchema = new mongoose.Schema(
-//   {
-//     location_name: { type: String, required: true },
-//     location_image: { type: String, required: true },
-//   },
-//   { versionKey: false }
-// );
-
-// const LocationBikes = mongoose.model("location", locationBikesSchema);
-
-// app.get("/location", async (req, res) => {
-//   const location = await LocationBikes.find({}).lean().exec();
-//   res.status(200).json({ data: location });
-// });
-
 //user auth
 
 //signup
@@ -105,6 +88,7 @@ app.post(
 );
 
 //login
+
 app.post("/users/login", async (req, res) => {
   const { email, password } = req.body;
   let user = await User.findOne({
@@ -129,16 +113,31 @@ app.post("/users/login", async (req, res) => {
 });
 
 app.get("/locations", async (req, res) => {
+  console.log(req.params.searchQuery);
   const location = await LocationBikes.find({}).lean().exec();
   res.status(200).json({ data: location });
 });
 
+app.get("/locations/:searchQuery", async (req, res) => {
+  console.log(req.params.searchQuery);
+  const location = await LocationBikes.find({
+    location_name: {
+      $regex: req.params.searchQuery,
+      $options: "i",
+    },
+  })
+    .lean()
+    .exec();
+  res.status(200).json({ data: location });
+});
+
 app.get("/location/:locationid/bikes", async (req, res) => {
+  console.log(req.params.locationid);
   const bikes = await Bikes.find({ locationId: req.params.locationid })
     .lean()
     .exec();
   const location = await LocationBikes.findById(req.params.locationid);
-  res.status(200).json({ data: bikes });
+  res.status(200).json({ data: { bikes, location } });
 });
 
 async function start() {

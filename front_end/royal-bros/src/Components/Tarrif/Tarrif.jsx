@@ -1,15 +1,13 @@
 import React, { useState, useContext } from "react";
 import BikeCard from "./BikeCard";
-import { useSelector, useDispatch } from "react-redux";
-import { getBikesHandler } from "../../Redux/Tarrif/Actions";
+import { useSelector } from "react-redux";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
 
 import styles from "./Tarrif.module.css";
 import Search from "../Search/Search";
 
 function Tarrif() {
-  const allBikes = useSelector((state) => state.tarrifReducer.data);
-  const dispatch = useDispatch();
+  const allBikes = useSelector((state) => state.tarrifReducer.allBikes);
   const [modalOpen, setModalOpen] = useState(false);
   const { selectedBikeHandler } = useContext(SelectionContext);
 
@@ -17,10 +15,6 @@ function Tarrif() {
     setModalOpen(true);
     selectedBikeHandler(payload);
   };
-
-  React.useEffect(() => {
-    dispatch(getBikesHandler());
-  }, []);
 
   return (
     <div className={styles.Tarrif}>

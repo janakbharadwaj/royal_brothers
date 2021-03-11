@@ -1,20 +1,15 @@
 import React from "react";
 import styles from "./Home.module.css";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import FleetCard from "./FleetCard";
-import { getBikesHandler } from "../../Redux/Tarrif/Actions";
 import HomeCarousel from "./HomeCarousel";
 import { useHistory } from "react-router";
 
 function Home() {
-  const allBikes = useSelector((state) => state.tarrifReducer.data);
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const allBikes = useSelector((state) => state.tarrifReducer.allBikes);
 
-  React.useEffect(() => {
-    dispatch(getBikesHandler());
-  }, []);
+  const history = useHistory();
 
   const exploreHandler = () => {
     history.push("/search");
