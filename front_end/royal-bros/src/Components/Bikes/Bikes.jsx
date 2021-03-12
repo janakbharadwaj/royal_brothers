@@ -6,6 +6,7 @@ import getBikes from "../../Redux/Bikes/action";
 import BikesFiter from "./BikesFilter";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
 import TimeConversion from "./utils"
+import { tarrifReducer } from "../../Redux/Tarrif/TarrifReducer";
 const Bikes = () => {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -40,8 +41,14 @@ const Bikes = () => {
     history.push(`/bikes/payment/${id}`);
   };
    const { pickUpDate, pickUpTime, dropOffDate, dropOffTime } = dateTimings;
-  
+  const[actRele,setRele]=React.useState(true)
   return (
+    <>
+    <div className={styles.upper__cont}>
+      {actRele?<span style={{fontWeight:"bolder",borderBottom:"4px solid yellow"}}>Relevance</span>:<span>Relevance</span>}
+      <span>highToLow</span>
+      <span>Low to high</span>
+    </div>
     <div className={styles.main__cont}>
       <div className={styles.main__cont__filters}>
         <h2>FILTERS</h2>
@@ -197,6 +204,7 @@ const Bikes = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

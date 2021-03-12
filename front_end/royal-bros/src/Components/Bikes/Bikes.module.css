@@ -7,12 +7,14 @@
 .main__cont__filters{
     width:25vw;
     border:1px solid #9e9e9e;
-    border-radius: 10px;
+    border-radius: 3px;
     margin: 2vh;
+    height:100vh;
+    overflow-y: scroll;
 }
 .main__cont__bikesdata{
     width:70vw;
-    border-radius: 6px;
+    border-radius: 2px;
     border: 1px solid #9e9e9e;
     margin: 2vh;
 }
@@ -100,4 +102,11 @@
     border-radius: 3px;
     border: 0;
     outline: none;
+}
+.upper__cont{
+
+}
+.upper__cont >span
+{
+    margin: 0px 5vh;
 }

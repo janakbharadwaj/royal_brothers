@@ -34,15 +34,16 @@ import {useSelector,useDispatch} from "react-redux"
     return (
         <div className={styles.text__part}>
             <p style={{fontWeight:"bolder"}}>select date and time</p>
-                
+
                 <div className={styles.date__time}>
+                    
                     <label>
                         pickup Date<br/>
                         <input type="date"
                         name="pickUpDate"
                          placeholder="pickup date"
                          value={pickUpDate}
-                         onChange={handleUpdateDateTiming}/>
+                         onChange={handleUpdateDateTiming} required/>
                     </label>
                     <label>
                         Time<br/>
@@ -50,7 +51,7 @@ import {useSelector,useDispatch} from "react-redux"
                         name="pickUpTime"
                          placeholder="pickupdate"
                          value={pickUpTime}
-                         onChange={handleUpdateDateTiming}/>
+                         onChange={handleUpdateDateTiming} required/>
                     </label>
                 </div>
                 <div className={styles.date__time}>
@@ -60,7 +61,7 @@ import {useSelector,useDispatch} from "react-redux"
                         name="dropOffDate"
                          placeholder="pickup date"
                          value={dropOffDate}
-                         onChange={handleUpdateDateTiming}/>
+                         onChange={handleUpdateDateTiming} required/>
                     </label>
                     <label>
                         Time<br/>
@@ -68,9 +69,10 @@ import {useSelector,useDispatch} from "react-redux"
                         name="dropOffTime"
                          placeholder="pickup date"
                          value={dropOffTime}
-                         onChange={handleUpdateDateTiming}/>
+                         onChange={handleUpdateDateTiming} required/>
                     </label>
                 </div>
+
                 <div>
                   <p style={{fontWeight:"bolder"}}>Search Duration</p>
                   {(pickUpDate && dropOffDate)  &&  TimeConversion(pickUpDate,dropOffDate) } days
@@ -84,7 +86,7 @@ import {useSelector,useDispatch} from "react-redux"
                 <br/>
                 <p style={{fontWeight:"bolder"}}>Search By Bike model</p>
                 <div className={styles.bikes__filter__page}>
-                 <form onSubmit={handleSubmit}>
+                 <form id="myform" onSubmit={handleSubmit}>
                         {bikeData?.map((bike)=>
                         <>
                         <br/>
@@ -95,17 +97,20 @@ import {useSelector,useDispatch} from "react-redux"
                              name={`${bike.bike_name}`}
                             value={bikeState || false}
                             onChange={handleChange}
+                            
                            
                              />
                               {bike.bike_name}
                         </label>
                         </>)}
                         <br/>
-                        <input className={styles.apply_filter_btn} type="submit" value="APPLY FILTERS"/>
+                        {/* <input className={styles.apply_filter_btn} type="submit" value="APPLY FILTERS"/> */}
                  </form>
+                 
                  
                     
                 </div>
+                <input form="myform" className={styles.apply_filter_btn} type="submit" value="APPLY FILTERS"/>
                 
         </div>
     )
