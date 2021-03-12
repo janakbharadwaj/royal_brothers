@@ -18,6 +18,7 @@ import LocationModal from "../../../LocationModal/LocationModal";
 import { useSelector, useDispatch } from "react-redux";
 import ProfileDropdown from "../../ProfileDropdown";
 import { logoutHandler } from "../../../../Redux/Auth/Actions";
+import { chooseLocationHandler } from "../../../../Redux/Tarrif/Actions";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -129,6 +130,10 @@ function Navbar(props) {
     history.push("/");
     setDropDown(false);
   };
+
+  React.useEffect(() => {
+    dispatch(chooseLocationHandler("60489b1667b6df5e649d9671"));
+  }, []);
 
   return (
     <div className={classes.root}>

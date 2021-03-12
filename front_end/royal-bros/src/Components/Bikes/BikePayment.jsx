@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./BikePayment.module.css";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import TimeConversion from "./utils";
 import { useSelector, useDispatch } from "react-redux";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
 import StripeCheckout from "react-stripe-checkout";
 import { rentalsHandler } from "../../Redux/Transactions/Actions";
 const BikePayment = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { info } = React.useContext(SelectionContext);
   const { pickupDate, pickupTime, dropDate, dropTime } = info;
@@ -22,15 +23,13 @@ const BikePayment = () => {
     obj.pickup_time = pickupTime;
     obj.drop_date = dropDate;
     obj.drop_time = dropTime;
-    obj.price = total_amount(singleBike.hourly_rate);
+    obj.paid = total_amount(singleBike.hourly_rate);
     dispatch(rentalsHandler(obj));
+    setTimeout(() => {
+      history.push("/orders");
+    }, 1000);
   };
 
-  //   function handleToken(token) {
-  //     console.log(token);
-  //     console.log(handlePayment());
-  //     console.log("gg");
-  //   }
   const no_of_hours = () => {
     return TimeConversion(pickupDate, dropDate) * 24;
   };
@@ -134,7 +133,6 @@ const BikePayment = () => {
           <div>{total_amount(singleBike.hourly_rate)}</div>
         </div>
         <div className={styles.makepayment__button}>
-          <button onClick={handlePayment}>Make payment</button>
           <StripeCheckout
             stripeKey="pk_test_51GuhVYJILFs8StGHjjzZha1VPsLlSzlDyahYHZksGhiDQZ94VIOGLzLOOsZoGwkm9nKgMM3qnVMg8ycODAV2FbWq00z0RR74IN"
             token={handlePayment}
