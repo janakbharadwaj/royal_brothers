@@ -10,6 +10,11 @@ clone the repository into the local system, and install necessary packages in bo
 npm install
 ```
 
+### Please add the following line in .env file in backend folder before starting the application
+```
+API_KEY = mongodb+srv://janak:1234@royalbrothers.nvqto.mongodb.net/royal_brothers?retryWrites=true&w=majority
+```
+
 ## Usage
 ### If you are a new user Sign Up first, then Login Using Credentials.
 Select the location based on your preference and enjoy the ride, We have implemented both daily rentals and monthly rentals, user can select any one of the schemes, select the bike you desire, and no of days you require, make payment through credit/debit card (mock payment) once the payment is successful user will be redirected to list of rides which are made by a specific user, click the logout button at the end.
