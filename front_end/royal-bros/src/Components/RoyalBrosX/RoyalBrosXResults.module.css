@@ -65,3 +65,22 @@
 .sortsDiv p:nth-child(4):hover{text-decoration: 1px solid rgb(254,200,38) underline;}
 
 
+.timeAndDateDiv{
+    /* border: 1px solid black; */
+    width: 76%;
+    margin: auto;
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.timeAndDateDiv > h2{
+    font-weight: bold;
+    font-size: 22px;
+    line-height: normal;
+    color: rgb(254,200,38);
+    margin-top: 10px;
+}
+
+.timeAndDateDiv > h3{
+    font-size: 18px;
+}
