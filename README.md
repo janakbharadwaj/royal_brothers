@@ -10,10 +10,7 @@ clone the repository into the local system, and install necessary packages in bo
 npm install
 ```
 
-### Please add the following line in .env file in backend folder before starting the application
-```
-API_KEY = mongodb+srv://janak:1234@royalbrothers.nvqto.mongodb.net/royal_brothers?retryWrites=true&w=majority
-```
+### Please add the .env file in backend folder before starting the application
 
 ## Usage
 ### If you are a new user Sign Up first, then Login Using Credentials.
