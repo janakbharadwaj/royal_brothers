@@ -88,7 +88,7 @@ const Bikes = () => {
                                      
                                         &#x20b9; {(pickUpDate && dropOffDate)  && Number(TimeConversion(pickUpDate,dropOffDate))*24*bike.hourly_rate}
                                         <br />
-                                        (360 km included)
+                                        ( km included)
                                       </p>
                                     </div>
                                     <div>
@@ -184,7 +184,7 @@ const Bikes = () => {
           
                       &#x20b9;{(pickUpDate && dropOffDate)  && Number(TimeConversion(pickUpDate,dropOffDate))*24*bike.hourly_rate}
                       <br />
-                      (360 km included)
+                      ( km included)
                     </p>
                   </div>
                   <div>
