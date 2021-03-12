@@ -45,12 +45,6 @@
   background-color: rgb(254, 210, 80);
 }
 
-/* .abc {
-  margin-top: 10%;
-  border-bottom: 1px solid rgba(206, 198, 198, 0.527);
-  padding-bottom: 5px;
-} */
-
 .locationBtn {
   display: flex;
   align-items: center;
@@ -59,7 +53,6 @@
   border: 2px solid rgb(254, 210, 80);
   border-radius: 5px;
   background-color: white;
-
   cursor: pointer;
 }
 
@@ -75,15 +68,14 @@
 }
 
 .profile {
-  /* border: 1px solid black; */
   display: flex;
   align-items: center;
   width: 160px;
-  margin-left: 50px;
   cursor: pointer;
   border-radius: 5px;
   position: relative;
   padding: 15px;
+  margin: 6px 0 6px 50px;
 }
 
 .profile:hover {

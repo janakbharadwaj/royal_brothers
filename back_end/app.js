@@ -64,7 +64,6 @@ app.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log(errors.errors[0].msg);
       return res.send({ message: errors.errors[0].msg });
     }
 
@@ -114,13 +113,11 @@ app.post("/users/login", async (req, res) => {
 });
 
 app.get("/locations", async (req, res) => {
-  console.log(req.params.searchQuery);
   const location = await LocationBikes.find({}).lean().exec();
   res.status(200).json({ data: location });
 });
 
 app.get("/locations/:searchQuery", async (req, res) => {
-  console.log(req.params.searchQuery);
   const location = await LocationBikes.find({
     location_name: {
       $regex: req.params.searchQuery,
@@ -133,7 +130,6 @@ app.get("/locations/:searchQuery", async (req, res) => {
 });
 
 app.get("/location/:locationid/bikes", async (req, res) => {
-  console.log(req.params.locationid);
   const bikes = await Bikes.find({ locationId: req.params.locationid })
     .lean()
     .exec();

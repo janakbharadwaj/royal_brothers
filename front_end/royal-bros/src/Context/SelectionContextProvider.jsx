@@ -36,7 +36,8 @@ function SelectionContextProvider({ children }) {
     // } else {
     //   console.log("false");
     // }
-    history.push("/search");
+    console.log(moment(info.pickupDate).add(8, "month").format("MM/DD/YYYY"));
+    //history.push("/search");
   };
 
   const selectedBikeHandler = (payload) => {

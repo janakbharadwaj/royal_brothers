@@ -6,6 +6,7 @@ import { authReducer } from "./Auth/authReducer";
 import bikeFilterReducer from "./BikesFilter/reducer";
 import { userReducer } from "./User/userReducer";
 import royalBrosXReducer from "./RoyalBrosX/royalBrosXReducer";
+import { transactionsReducer } from "./Transactions/transactionsReducer";
 
 const rootReducer = combineReducers({
   tarrifReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   bikesFilter: bikeFilterReducer,
   userReducer,
   royalBrosXReducer: royalBrosXReducer,
+  transactionsReducer,
 });
 
 let composeEnhancers = compose;
