@@ -1,17 +1,19 @@
 .main__cont{
     display: flex;
     justify-content: center;
-   
-    border:1px solid black;
+    
+    
 }
 .main__cont__filters{
     width:25vw;
-    border:1px solid black;
+    border:1px solid #9e9e9e;
+    border-radius: 10px;
     margin: 2vh;
 }
 .main__cont__bikesdata{
     width:70vw;
-    border: 1px solid black;
+    border-radius: 6px;
+    border: 1px solid #9e9e9e;
     margin: 2vh;
 }
 .main__cont__bikesdata__Items
@@ -22,6 +24,9 @@
     align-items: center;
     flex-wrap: wrap;
 
+}
+.main__cont__bikesdata__Items img{
+    width:70%;
 }
 .main__cont__bikesdata__Items > div{
     background-color: #FFFFFF;

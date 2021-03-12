@@ -16,6 +16,6 @@ function dateDiffInDays(a, b) {
 const a = new Date(pickup),
     b = new Date(dropoff),
     difference = dateDiffInDays(a, b);
-    return (`${difference} days`)
+    return (difference)
 }
 export default TimeConversion
