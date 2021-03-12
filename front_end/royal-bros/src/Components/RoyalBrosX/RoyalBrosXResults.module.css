@@ -45,24 +45,32 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-decoration: 1px solid gray underline;
     margin-top: 30px;
 }
 
 .sortsDiv p:nth-child(1){
     margin-left: 2.5%;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
 }
 
 .sortsDiv p:nth-child(2),
 .sortsDiv p:nth-child(3),
 .sortsDiv p:nth-child(4){
-    margin-left: 6%;
+    margin-left: 2%;
     cursor: pointer;
+    border: 1px solid rgba(192, 188, 188, 0.479);
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 5px;
 }
 
-.sortsDiv p:nth-child(2):hover{text-decoration: 1px solid rgb(254,200,38) underline;}
-.sortsDiv p:nth-child(3):hover{text-decoration: 1px solid rgb(254,200,38) underline;}
-.sortsDiv p:nth-child(4):hover{text-decoration: 1px solid rgb(254,200,38) underline;}
+.sortsDiv p:nth-child(2):hover{border: 0; background-color: rgb(254,200,38);color: white;}
+.sortsDiv p:nth-child(3):hover{border: 0; background-color: rgb(254,200,38);color: white;}
+.sortsDiv p:nth-child(4):hover{border: 0; background-color: rgb(254,200,38);color: white;}
 
 
 .timeAndDateDiv{
