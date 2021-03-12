@@ -19,7 +19,7 @@ function Tarrif() {
   return (
     <div className={styles.Tarrif}>
       <Search modalOpen={modalOpen} setModalOpen={setModalOpen}></Search>
-      <h1>Bike rental tariffs in Bangalore</h1>
+      <h1>Bike rental tariffs</h1>
       <div className={styles.Tarrif__bikes}>
         {allBikes?.map((item) => (
           <BikeCard

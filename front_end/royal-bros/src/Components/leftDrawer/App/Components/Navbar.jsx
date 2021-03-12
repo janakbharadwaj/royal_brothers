@@ -14,9 +14,10 @@ import React from "react";
 import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link, useHistory } from "react-router-dom";
-import { OverlayVisible } from "../../profileDropdown";
 import LocationModal from "../../../LocationModal/LocationModal";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import ProfileDropdown from "../../ProfileDropdown";
+import { logoutHandler } from "../../../../Redux/Auth/Actions";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -95,10 +96,21 @@ function Navbar(props) {
   const currentLocation = useSelector(
     (state) => state.tarrifReducer.currentLocation
   );
+  const userData = useSelector((state) => state.authReducer.userData);
   const isAuth = useSelector((state) => state.authReducer.isAuth);
   const [modalOpen, setModalOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [dropDown, setDropDown] = React.useState(false);
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const onMouseOverHandler = () => {
+    setDropDown(true);
+  };
+
+  const onMouseOffHandler = () => {
+    setDropDown(false);
+  };
 
   const locationHandler = (payload) => {
     setModalOpen(true);
@@ -110,6 +122,12 @@ function Navbar(props) {
 
   const handleRouteChange = (to) => {
     history.push(to);
+  };
+
+  const logoutClickHandler = () => {
+    dispatch(logoutHandler());
+    history.push("/");
+    setDropDown(false);
   };
 
   return (
@@ -162,18 +180,30 @@ function Navbar(props) {
                 src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/location-71f31ec08c06cf6736a1d12d6381dfc5786c237acdb690006334bd670e011904.png"
                 alt="location"
               />
-              <span>{currentLocation?.location_name || "Location"}</span>{" "}
-              <i class="fas fa-chevron-down"></i>
+              <span>{currentLocation?.location_name || "Location"}</span>
+              <i className="fas fa-chevron-down"></i>
             </button>
             {isAuth ? (
-              <div className={styles.profile}>
+              <div
+                onMouseLeave={onMouseOffHandler}
+                onMouseOver={onMouseOverHandler}
+                className={styles.profile}
+              >
                 <img
                   src="https://d36g7qg6pk2cm7.cloudfront.net/assets/profile-f17aa1dfbd0cb562142f1dcb10bb7ad33e1ac8417ad29a1cdab7dfbfbbfe2f15.png"
                   alt="profile"
                 />
-                <span>
-                  <OverlayVisible />
+                <span className={styles.currentUser}>
+                  {userData.first_name || "User"}
                 </span>
+                <i className="fas fa-chevron-down"></i>
+                {dropDown && (
+                  <ProfileDropdown
+                    onMouseLeave={onMouseOffHandler}
+                    onMouseOver={onMouseOverHandler}
+                    logoutClickHandler={logoutClickHandler}
+                  ></ProfileDropdown>
+                )}
               </div>
             ) : (
               <Link to="/authentication">

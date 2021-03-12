@@ -64,9 +64,7 @@ app.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.send({
-        message: errors.errors.msg,
-      });
+      return res.send({ message: errors.errors[0].msg });
     }
 
     const { first_name, last_name, email, password } = req.body;
@@ -87,9 +85,7 @@ app.post(
       password,
     });
 
-    res
-      .status(200)
-      .json({ message: "Registration Successful", userId: user.id });
+    res.status(200).json({ message: "Success", userId: user.id });
   }
 );
 
@@ -113,19 +109,15 @@ app.post("/users/login", async (req, res) => {
       message: "Incorrect Password",
     });
   }
-  res
-    .status(200)
-    .json({ message: "Login  Successful", userData: user, isAuth: true });
+  res.status(200).json({ message: "Success", userData: user, isAuth: true });
 });
 
 app.get("/locations", async (req, res) => {
-  console.log(req.params.searchQuery);
   const location = await LocationBikes.find({}).lean().exec();
   res.status(200).json({ data: location });
 });
 
 app.get("/locations/:searchQuery", async (req, res) => {
-  console.log(req.params.searchQuery);
   const location = await LocationBikes.find({
     location_name: {
       $regex: req.params.searchQuery,
@@ -138,7 +130,6 @@ app.get("/locations/:searchQuery", async (req, res) => {
 });
 
 app.get("/location/:locationid/bikes", async (req, res) => {
-  console.log(req.params.locationid);
   const bikes = await Bikes.find({ locationId: req.params.locationid })
     .lean()
     .exec();
@@ -153,6 +144,59 @@ app.post("/filters/bikes", async (req, res) => {
     .exec();
   res.status(200).json(bikes);
 });
+
+//for rentals
+const rentalsSchema = mongoose.Schema({
+  bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
+  userId: String,
+  pickup_date: Date,
+  pickup_time: String,
+  drop_date: Date,
+  drop_time: String,
+  paid: Number,
+});
+
+const Rentals = mongoose.model("rentals", rentalsSchema);
+
+app.get("/rentals/:id", async (req, res) => {
+  const rentals = await Rentals.find({ userId: req.params.id })
+    .populate("bikeId")
+    .exec();
+
+  res.status(200).json(rentals);
+});
+
+app.post("/rentals", async (req, res) => {
+  const rentals = await Rentals.create(req.body);
+  res.status(201).json(rentals);
+});
+
+//for months subscription
+const monthsSchema = mongoose.Schema({
+  bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
+  userId: String,
+  pickup_date: Date,
+  pickup_time: String,
+  paid: Number,
+  deposit: Number,
+  months: Number,
+});
+
+const Months = mongoose.model("months", monthsSchema);
+
+app.get("/months/:id", async (req, res) => {
+  const months = await Months.find({ userId: req.params.id })
+    .populate("bikeId")
+    .exec();
+  res.status(200).json(months);
+});
+
+app.post("/months", async (req, res) => {
+  const months = await Months.create(req.body);
+  res.status(201).json(months);
+});
+
+// Starting the server
 async function start() {
   await connect();
   app.listen(port, () => {
