@@ -45,10 +45,10 @@ const BikePayment = () => {
   return (
     <div className={styles.main__cont}>
       <div style={{ textAlign: "left" }}>
-        <h1>Summary</h1>
+        <h1 style={{marginLeft:"20px"}}>SUMMARY</h1>
         <div className={styles.main__cont__info}>
           <div className={styles.bike__image__name}>
-            <div>
+            <div style={{textAlign:"center"}}>
               <img src={singleBike.bike_image} alt="bike" />
               <p>{singleBike.bike_name}</p>
             </div>
@@ -66,7 +66,7 @@ const BikePayment = () => {
               </div>
             </div>
             <hr />
-            <div>
+            <div className={styles.area_address}>
               Vishalpur (Nehru Bridge Corner)
               <br />
               B 429, Sakar-7 Ashram Rd, Vishalpur, Nehru Bridge Corner,
@@ -80,7 +80,7 @@ const BikePayment = () => {
               </div>
               <div>{total_without_tax(singleBike.hourly_rate)}.0</div>
             </div>
-            <hr />
+            <hr style={{color:"#555"}} />
             <div className={styles.week__day__priceTotal}>
               <div>Total</div>
               <div>{total_without_tax(singleBike.hourly_rate)}.0</div>
