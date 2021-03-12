@@ -5,12 +5,15 @@ import bikeReducer from "./Bikes/bikeReducer";
 import { authReducer } from "./Auth/authReducer";
 import bikeFilterReducer from "./BikesFilter/reducer";
 import { userReducer } from "./User/userReducer";
+import royalBrosXReducer from "./RoyalBrosX/royalBrosXReducer";
+
 const rootReducer = combineReducers({
   tarrifReducer,
   bikes: bikeReducer,
   authReducer,
   bikesFilter: bikeFilterReducer,
   userReducer,
+  royalBrosXReducer: royalBrosXReducer,
 });
 
 let composeEnhancers = compose;

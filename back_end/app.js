@@ -41,6 +41,12 @@ app.get("/bikes", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+app.get("/bikes/:id", async (req, res) => {
+  const bikeId = req.params.id;
+  const bikes = await Bikes.findById(bikeId).lean().exec();
+  res.status(200).json({ data: bikes });
+});
+
 //user auth
 
 //signup
@@ -151,7 +157,7 @@ app.post("/filters/bikes", async (req, res) => {
 //for rentals
 const rentalsSchema = mongoose.Schema({
   bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+  userId: String,
   pickup_date: Date,
   pickup_time: String,
   drop_date: Date,
@@ -161,13 +167,10 @@ const rentalsSchema = mongoose.Schema({
 const Rentals = mongoose.model("rentals", rentalsSchema);
 
 app.get("/rentals/:id", async (req, res) => {
-  const rentals = await Rentals.find({ _id: "604a23ccc52fdf0494b5c0d0" })
-    .populate("bikes")
-    .populate("users")
+  const rentals = await Rentals.find({ userId: req.params.id })
+    .populate("bikeId")
     .exec();
 
-  // const rentals = await Rentals.find({ userId: req.params.id }).exec();
-  // const bikes = await Bikes.find({ _id: rentals[0].bikeId });
   res.status(200).json(rentals);
 });
 
