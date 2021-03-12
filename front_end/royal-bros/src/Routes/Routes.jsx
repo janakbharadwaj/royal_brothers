@@ -8,7 +8,7 @@ import { RoyalBrosIndBike } from "../Components/RoyalBrosX/RoyalBrosIndBike";
 import { RoyalBrosXResults } from "../Components/RoyalBrosX/RoyalBrosXResults";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
-import BikePayment from "../Components/Bikes/BikePayment"
+import BikePayment from "../Components/Bikes/BikePayment";
 import Orders from "../Components/User/Orders";
 import Profile from "../Components/User/Profile";
 import AntiPrivateRoute from "./AntiPrivateRoute";
@@ -64,15 +64,9 @@ const Routes = () => {
         <AntiPrivateRoute path="/authentication" exact>
           <Authentication></Authentication>
         </AntiPrivateRoute>
-        {/* <Route path="/authentication" exact>
-          <Authentication></Authentication>
-        </Route> */}
-        <Route path="/payment" exact>
-          <Payment></Payment>
-        </Route>
-        <Route path="/bikes/payment/:bikePaymentId">
-          <BikePayment/>
-        </Route>
+        <PrivateRoute to="/authentication" path="/bikes/payment/:bikePaymentId">
+          <BikePayment />
+        </PrivateRoute>
         <Route>
           <h2>Page Not Found</h2>
         </Route>
