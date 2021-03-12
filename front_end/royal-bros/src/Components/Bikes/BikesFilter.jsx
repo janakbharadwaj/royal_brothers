@@ -32,8 +32,8 @@ import {useSelector,useDispatch} from "react-redux"
   }
    const bikeData=useSelector(state=>state.bikes.bikesData)
     return (
-        <div>
-            <p>select date and time</p>
+        <div className={styles.text__part}>
+            <p style={{fontWeight:"bolder"}}>select date and time</p>
                 
                 <div className={styles.date__time}>
                     <label>
@@ -72,8 +72,8 @@ import {useSelector,useDispatch} from "react-redux"
                     </label>
                 </div>
                 <div>
-                  <p>Search Duration</p>
-                 {(pickUpDate && dropOffDate)  &&  TimeConversion(pickUpDate,dropOffDate)} 
+                  <p style={{fontWeight:"bolder"}}>Search Duration</p>
+                  {(pickUpDate && dropOffDate)  &&  TimeConversion(pickUpDate,dropOffDate)`days` } 
                   <p>Search By location</p>
                   <select>
                     {["IndiraNagar","koramangala"].map((city,index)=>
@@ -82,6 +82,7 @@ import {useSelector,useDispatch} from "react-redux"
 
                 </div>
                 <br/>
+                <p style={{fontWeight:"bolder"}}>Search By Bike model</p>
                 <div className={styles.bikes__filter__page}>
                  <form onSubmit={handleSubmit}>
                         {bikeData?.map((bike)=>
@@ -100,7 +101,7 @@ import {useSelector,useDispatch} from "react-redux"
                         </label>
                         </>)}
                         <br/>
-                        <input type="submit"/>
+                        <input className={styles.apply_filter_btn} type="submit" value="APPLY FILTERS"/>
                  </form>
                  
                     

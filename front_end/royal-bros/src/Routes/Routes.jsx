@@ -7,6 +7,7 @@ import { RoyalBrosIndBike } from "../Components/RoyalBrosX/RoyalBrosIndBike";
 import { RoyalBrosXResults } from "../Components/RoyalBrosX/RoyalBrosXResults";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
+import BikePayment from "../Components/Bikes/BikePayment"
 
 const Routes = () => {
   return (
@@ -56,6 +57,9 @@ const Routes = () => {
         </Route>
         <Route path="/authentication" exact>
           <Authentication></Authentication>
+        </Route>
+        <Route path="/bikes/payment/:bikePaymentId">
+          <BikePayment/>
         </Route>
         <Route>
           <h2>Page Not Found</h2>

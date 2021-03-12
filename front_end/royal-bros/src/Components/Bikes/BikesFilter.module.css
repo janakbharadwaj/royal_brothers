@@ -19,6 +19,18 @@
     border:1px solid grey;
     text-align: left;
     padding: 10px;
-    height:30vh;
-    overflow-y: scroll;
+    /* height:30vh; */
+}
+.apply_filter_btn
+{
+    background-color:#fed250 ;
+    width:80%;
+    height: 5vh;
+    border-radius: 3px;
+    border: 0;
+    outline: none;
+}
+.text__part{
+    text-align: left;
+    padding:2vh;
 }
