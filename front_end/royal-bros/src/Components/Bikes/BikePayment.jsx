@@ -11,7 +11,14 @@ const BikePayment = () => {
     const bikesData = useSelector((state) => state.bikes.bikesData);
     const singleBike=bikesData.find((bike)=>bike._id==bikePaymentId)
     const handlePayment=()=>{
+       var obj={}
+       obj.bikeId=singleBike._id
+       obj.pickup_date=pickupDate
+       obj.pickup_time=pickupTime
+       obj.drop_date=dropDate
+       obj.drop_time=dropTime
 
+       
     }
     const no_of_hours=()=>{
         return TimeConversion(pickupDate,dropDate)*24;
