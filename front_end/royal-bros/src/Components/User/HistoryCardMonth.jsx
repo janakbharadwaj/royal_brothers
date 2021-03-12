@@ -1,16 +1,17 @@
+import moment from "moment";
 import React from "react";
 import styles from "./Orders.module.css";
 
-function HistoryCard({
+function HistoryCardMonth({
   bikeId,
   pickup_date,
-  drop_date,
-  pickup_time,
-  drop_time,
+  price,
+  deposit,
+  month,
+  expiry,
   index,
-  paid,
 }) {
-  const { _id, bike_name, bike_image, hourly_rate } = bikeId;
+  const { _id, bike_name, bike_image } = bikeId;
 
   return (
     <div className={styles.HistoryCard} key={_id}>
@@ -31,21 +32,21 @@ function HistoryCard({
           <h3>{pickup_date.substring(0, 10)}</h3>
         </div>
         <div>
-          <label>Pick up time</label>
-          <h3>{pickup_time}</h3>
+          <label>Deposit</label>
+          <h3>{deposit}</h3>
         </div>
         <div>
-          <label>Drop date</label>
-          <h3>{drop_date.substring(0, 10)}</h3>
+          <label>Months</label>
+          <h3>{month}</h3>
         </div>
         <div>
-          <label>Drop time</label>
-          <h3>{drop_time}</h3>
+          <label>Subscription Expiry</label>
+          <h3>{moment(expiry).format("YYYY-MM-DD")}</h3>
         </div>
         <div>
           <label>Paid</label>
           <div>
-            <button>₹ {Math.floor(paid)}</button>
+            <button>₹ {price}</button>
           </div>
         </div>
       </div>
@@ -53,4 +54,4 @@ function HistoryCard({
   );
 }
 
-export default HistoryCard;
+export default HistoryCardMonth;
