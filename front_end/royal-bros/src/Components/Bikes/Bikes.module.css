@@ -1,8 +1,7 @@
 .main__cont{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-   
+    
     
 }
 .main__cont__filters{

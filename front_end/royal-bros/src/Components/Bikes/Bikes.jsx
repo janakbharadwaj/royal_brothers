@@ -144,7 +144,7 @@ const Bikes = () => {
 
 
         </div>
-        <hr/>
+       
         <div className={styles.main__cont__bikesdata__Items}>
           {isError ? (
             <div>something went wrong</div>
