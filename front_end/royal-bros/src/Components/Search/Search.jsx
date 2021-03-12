@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Modal, Paper } from "@material-ui/core";
 import styles from "./Search.module.css";
 import { SelectionContext } from "../../Context/SelectionContextProvider";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     position: "absolute",
@@ -36,7 +37,8 @@ function Search({ modalOpen, setModalOpen }) {
                 onChange={onChangeHandler}
                 value={pickupDate}
                 name="pickupDate"
-                type="date"
+                type="Date"
+                required
               ></input>
             </div>
             <div>
@@ -45,6 +47,7 @@ function Search({ modalOpen, setModalOpen }) {
                 name="pickupTime"
                 value={pickupTime}
                 type="time"
+                required
               ></input>
             </div>
           </div>
@@ -56,6 +59,7 @@ function Search({ modalOpen, setModalOpen }) {
                 name="dropDate"
                 value={dropDate}
                 type="date"
+                required
               ></input>
             </div>
             <div>
@@ -64,6 +68,7 @@ function Search({ modalOpen, setModalOpen }) {
                 name="dropTime"
                 value={dropTime}
                 type="time"
+                required
               ></input>
             </div>
           </div>

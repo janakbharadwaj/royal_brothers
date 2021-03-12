@@ -1,0 +1,60 @@
+.Orders {
+  min-height: 60vh;
+}
+
+.Orders__list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  margin: 50px auto;
+  border-radius: 5px;
+}
+
+.HistoryCard {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  box-shadow: 8px 8px 16px rgb(194, 188, 188);
+  border-radius: 5px;
+}
+.HistoryCard label {
+  font-weight: 800;
+  font-size: 14px;
+  color: #2c2b28;
+  text-transform: uppercase;
+}
+
+.HistoryCard__details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.HistoryCard__details > div {
+  margin: 10px;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.HistoryCard__details button {
+  width: 100%;
+  min-width: 100px;
+  background-color: #fed250;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+  border-radius: 5px;
+}
+
+.HistoryCard__details button:hover {
+  background-color: #ffc400;
+}

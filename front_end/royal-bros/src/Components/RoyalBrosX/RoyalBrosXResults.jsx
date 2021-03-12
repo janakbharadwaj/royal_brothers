@@ -6,6 +6,17 @@ import {Link} from 'react-router-dom'
 
 const RoyalBrosXResults = () => {
     const [data,setData] = React.useState([])
+    const[date,setDate]=React.useState('')
+    const[time,setTime]=React.useState('')
+
+    React.useEffect(()=>{
+        let abc = localStorage.getItem("dateTime")
+        let dateTime = JSON.parse(abc)
+        //console.log(dateTime)
+        setDate(dateTime.date)
+        setTime(dateTime.time)
+    },[])
+    //console.log(date,time)
 
     function getBikes(){
         axios.get("http://localhost:8080/bikes")
@@ -40,6 +51,10 @@ const RoyalBrosXResults = () => {
 
     return (
         <>
+            <div className={styles.timeAndDateDiv}>
+                <h2>PICK UP</h2>
+                <h3> <i class="fas fa-table"> </i> : {date}  <span> <i class="fas fa-grip-lines-vertical"> </i> </span> <i class="far fa-clock"> </i> : {time} </h3>
+            </div>
             <div className={styles.sortsDiv}>
                 <p>Sort By</p>
                 <p onClick={getPopular}>POPULAR</p>

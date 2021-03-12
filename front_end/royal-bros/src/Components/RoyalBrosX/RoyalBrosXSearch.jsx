@@ -45,6 +45,17 @@ let whyRentFromUs = [
 ]
 
 const RoyalBrosXSearch = () => {
+    const[date,setDate]=React.useState('')
+    const[time,setTime]=React.useState('')
+
+    const handleDateTime=()=>{
+        //console.log(date,time)
+        let dateTime = {date:date,time:time}
+        //console.log(dateTime)
+        localStorage.getItem("dateTime")
+        localStorage.setItem("dateTime",JSON.stringify(dateTime))
+    }
+
     return (
         <>
             <div className={styles.backImg}>
@@ -62,12 +73,12 @@ const RoyalBrosXSearch = () => {
                     </div>
                     <div className={styles.inputFeildsDiv}>
                         <h2>Pick Up</h2>
-                        <form>
-                            <input type="date" placeholder='date' required/>
-                            <input type="time" placeholder='time' required/>
+                        <div>
+                            <input type="date" placeholder='date' onChange={(e)=>setDate(e.target.value)} value={date}/>
+                            <input type="time" placeholder='time' onChange={(e)=>setTime(e.target.value)} value={time}/>
                             {/* <input type="submit" name='search' to='/search'/> */}
-                            <button className={styles.searchBtn}><Link to='/royalXSearch' style={{textDecoration:"none",color:"black"}}>SEARCH</Link></button>
-                        </form>
+                            <button className={styles.searchBtn} onClick={handleDateTime}><Link to='/royalXSearch' style={{textDecoration:"none",color:"black"}}>SEARCH</Link></button>
+                        </div>
                     </div>
                 </div>
             </div>

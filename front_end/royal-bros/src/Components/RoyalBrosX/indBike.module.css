@@ -1,0 +1,81 @@
+.indBikeParentDiv{
+    /* border: 1px solid black; */
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 70%;
+    margin: auto;
+}
+
+.bikeDetails{
+    /* border: 1px solid black; */
+    margin: 50px 0px 20px 0px;
+}
+
+.subsDetails{
+    /* border: 1px solid black; */
+    margin: 20px 0px 50px 0px;
+    padding: 10px;
+    width: 80%;
+    box-shadow: 0.1px 0.1px 15px rgba(189, 186, 186, 0.459);
+    border-radius: 5px;
+}
+
+.subsDetails > h2{
+    font-weight: bold;
+}
+
+.subsDetails > label{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.subsDetails > input{
+    width: 150px;
+    border: 0;
+    border-bottom: 3px solid gray;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+}
+
+.subsDetails > input:hover{
+    border-bottom: 3px solid rgb(254,210,80);
+    color: rgb(254,210,80);
+}
+
+.subsDetails > button{
+    margin-top: 10px;
+    border: 0;
+    outline: none;
+    background-color: rgb(254,210,80);
+    padding: 6px;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.ratesDiv{
+    /* border: 1px solid black; */
+    text-align: center;
+    /* width: 65%; */
+    margin: 10px auto;
+    padding-left: 5px;
+}
+
+.ratesDiv > p{
+    font-size: 15px;
+}
+
+.ratesDiv>p>span{
+    font-weight: bold;
+}
+
+.ratesDiv>h3>span{
+    font-weight: bold;
+}
+
+.ratesDiv>h3:hover{color: rgb(254,210,80);}
+.ratesDiv>p:hover{color: rgb(254,210,80);}

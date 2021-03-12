@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import { useHistory } from "react-router-dom";
 export const SelectionContext = React.createContext();
@@ -29,7 +30,14 @@ function SelectionContextProvider({ children }) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    history.push("/search");
+    //do not delete
+    // if (moment(info.dropDate).isSameOrAfter(info.pickupDate)) {
+    //   console.log("true");
+    // } else {
+    //   console.log("false");
+    // }
+    console.log(moment(info.pickupDate).add(8, "month").format("MM/DD/YYYY"));
+    //history.push("/search");
   };
 
   const selectedBikeHandler = (payload) => {

@@ -3,11 +3,16 @@ import { Switch, Route } from "react-router-dom";
 import Authentication from "../Components/Authentication/Authentication";
 import Bikes from "../Components/Bikes/Bikes";
 import Home from "../Components/Home/Home";
+import Payment from "../Components/Payment/Payment";
 import { RoyalBrosIndBike } from "../Components/RoyalBrosX/RoyalBrosIndBike";
 import { RoyalBrosXResults } from "../Components/RoyalBrosX/RoyalBrosXResults";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
 import BikePayment from "../Components/Bikes/BikePayment"
+import Orders from "../Components/User/Orders";
+import Profile from "../Components/User/Profile";
+import AntiPrivateRoute from "./AntiPrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = () => {
   return (
@@ -32,13 +37,13 @@ const Routes = () => {
           <Bikes />
         </Route>
         <Route path="/royalXSearch" exact>
-          <RoyalBrosXResults/>
+          <RoyalBrosXResults />
         </Route>
         <Route path="/royalbrothersX" exact>
-          <RoyalBrosXSearch/>
+          <RoyalBrosXSearch />
         </Route>
         <Route path="/royalXSearch/:id" exact>
-          <RoyalBrosIndBike/>
+          <RoyalBrosIndBike />
         </Route>
         <Route path="/testRideAther" exact>
           <h2>test ride ather</h2>
@@ -49,14 +54,20 @@ const Routes = () => {
         <Route path="/reachUs" exact>
           <h2>reach Us</h2>
         </Route>
-        <Route path="/orders" exact>
-          <h2>my rides</h2>
-        </Route>
-        <Route path="/users" exact>
-          <h2>my profile</h2>
-        </Route>
-        <Route path="/authentication" exact>
+        <PrivateRoute to="/authentication" path="/orders">
+          <Orders></Orders>
+        </PrivateRoute>
+        <PrivateRoute to="/authentication" path="/users">
+          <Profile></Profile>
+        </PrivateRoute>
+        <AntiPrivateRoute path="/authentication" exact>
           <Authentication></Authentication>
+        </AntiPrivateRoute>
+        {/* <Route path="/authentication" exact>
+          <Authentication></Authentication>
+        </Route> */}
+        <Route path="/payment" exact>
+          <Payment></Payment>
         </Route>
         <Route path="/bikes/payment/:bikePaymentId">
           <BikePayment/>

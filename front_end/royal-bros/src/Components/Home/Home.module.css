@@ -245,6 +245,11 @@
   background-color: #ffc400;
 }
 
+.Fleet__solo__card a {
+  text-decoration: none;
+  color: black;
+}
+
 .Carousel__solo {
   width: 100%;
 }

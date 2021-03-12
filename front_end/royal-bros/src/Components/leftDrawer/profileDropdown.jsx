@@ -1,50 +1,32 @@
 import React from "react";
-import "antd/dist/antd.css";
-import { Menu, Dropdown } from "antd";
-import { DownOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import styles from "./ProfileDropdown.module.css";
 
-class OverlayVisible extends React.Component {
-  state = {
-    visible: false,
-  };
-
-  handleMenuClick = (e) => {
-    if (e.key === "3") {
-      this.setState({ visible: false });
-    }
-  };
-
-  handleVisibleChange = (flag) => {
-    this.setState({ visible: flag });
-  };
-
-  render() {
-    const menu = (
-      <Menu style={{ width: "170px" }} onClick={this.handleMenuClick}>
-        <br />
-        <Menu.Item key="1">
-          <Link to="/orders">My Rides</Link>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Link to="/users">My Profile</Link>
-        </Menu.Item>
-        <Menu.Item key="3">Logout</Menu.Item>
-      </Menu>
-    );
-    return (
-      <Dropdown
-        overlay={menu}
-        onVisibleChange={this.handleVisibleChange}
-        visible={this.state.visible}
-      >
-        <span className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-          user <DownOutlined />
-        </span>
-      </Dropdown>
-    );
-  }
+function ProfileDropdown({ logoutClickHandler }) {
+  return (
+    <div className={styles.ProfileDropdown}>
+      <div>
+        <Link to="/orders">
+          <i class="fas fa-biking"></i>
+          My Rides
+        </Link>
+      </div>
+      <hr></hr>
+      <div>
+        <Link to="/users">
+          <i class="fas fa-user"></i>
+          My Profile
+        </Link>
+      </div>
+      <hr></hr>
+      <div onClick={logoutClickHandler}>
+        <Link to="/">
+          <i class="fas fa-sign-out-alt"></i>
+          Logout
+        </Link>
+      </div>
+    </div>
+  );
 }
 
-// ReactDOM.render(<OverlayVisible />, document.getElementById('container'));
-export { OverlayVisible };
+export default ProfileDropdown;
