@@ -50,7 +50,7 @@ function SelectionContextProvider({ children }) {
     onSubmitHandler,
     selectedBikeHandler,
     selectedBike,
-    setInfo
+    setInfo,
   };
   return (
     <SelectionContext.Provider value={value}>
