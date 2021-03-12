@@ -1,0 +1,79 @@
+.fullParent{
+    background-image:url('https://d36g7qg6pk2cm7.cloudfront.net/assets/ather_test_ride_bg-1611986d2edc9f5cc47d73e8840d350da06dc9dae57db557f899b5483d5c8429.jpg');
+    height: 650px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.headerText{
+    /* border: 1px solid black; */
+    width: 40%;
+    text-align: left;
+    margin-left: 10%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 6%;
+}
+
+.headerText > h1{
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.calenderDiv{
+    /* border: 1px solid black; */
+    width: 60%;
+    padding: 20px;
+    box-shadow: 0.1px 0.1px 15px rgba(189, 186, 186, 0.459);
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+.calenderDiv>h2{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.inputDiv>h3{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.inputDiv>input{
+    width: 45%;
+    outline: none;
+    border: 1px solid rgba(184, 180, 180, 0.555);
+    font-size: 18px;
+    padding: 5px;
+}
+
+.optionsDiv>h3{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.optionsDiv>select{
+    width: 90%;
+    outline: none;
+    border: 1px solid rgba(184, 180, 180, 0.555);
+    font-size: 18px;
+    padding: 5px;
+}
+
+.optionsDiv>select:hover{
+    border: 1px solid rgb(254,201,44);
+    outline: none;
+}
+
+.calenderDiv>button{
+    width: 90%;
+    margin-top: 10%;
+    font-size: 15px;
+    background-color: rgb(254,201,44);
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}

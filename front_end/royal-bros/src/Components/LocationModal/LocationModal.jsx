@@ -54,7 +54,7 @@ function LocationModal({ modalOpen, setModalOpen }) {
           </div>
           <div className={styles.LocationModal__cards}>
             {allLocations?.map((item) => (
-              <Card key={item._id} {...item}></Card>
+              <Card key={item._id} {...item} setModalOpen={setModalOpen}></Card>
             ))}
           </div>
         </div>

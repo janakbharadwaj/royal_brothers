@@ -8,11 +8,12 @@ import { RoyalBrosIndBike } from "../Components/RoyalBrosX/RoyalBrosIndBike";
 import { RoyalBrosXResults } from "../Components/RoyalBrosX/RoyalBrosXResults";
 import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
-import BikePayment from "../Components/Bikes/BikePayment"
+import BikePayment from "../Components/Bikes/BikePayment";
 import Orders from "../Components/User/Orders";
 import Profile from "../Components/User/Profile";
 import AntiPrivateRoute from "./AntiPrivateRoute";
 import PrivateRoute from "./PrivateRoute";
+import { AtherTestRide } from "../Components/AtherTestRide/AtherTestRide";
 
 const Routes = () => {
   return (
@@ -24,15 +25,15 @@ const Routes = () => {
         <Route path="/tarrif" exact>
           <Tarrif />
         </Route>
-        <Route path="/whatsNew" exact>
-          <h1>whats new ?</h1>
+        <Route path="/royalbrothersX" exact>
+          <RoyalBrosXSearch />
         </Route>
-        <Route path="/offers" exact>
-          <h1>offers</h1>
+        {/* <Route path="/offers" exact>
+          
         </Route>
         <Route path="/partnerWithUs" exact>
-          <h1>partner with us</h1>
-        </Route>
+          
+        </Route> */}
         <Route path="/search" exact>
           <Bikes />
         </Route>
@@ -42,18 +43,18 @@ const Routes = () => {
         <Route path="/royalbrothersX" exact>
           <RoyalBrosXSearch />
         </Route>
-        <Route path="/royalXSearch/:id" exact>
+        <PrivateRoute to="/authentication" path="/royalXSearch/:id" exact>
           <RoyalBrosIndBike />
-        </Route>
+        </PrivateRoute>
         <Route path="/testRideAther" exact>
-          <h2>test ride ather</h2>
+          <AtherTestRide/>
         </Route>
-        <Route path="/aboutUs" exact>
-          <h2>about Us</h2>
+        {/* <Route path="/aboutUs" exact>
+          
         </Route>
         <Route path="/reachUs" exact>
-          <h2>reach Us</h2>
-        </Route>
+          
+        </Route> */}
         <PrivateRoute to="/authentication" path="/orders">
           <Orders></Orders>
         </PrivateRoute>
@@ -63,15 +64,9 @@ const Routes = () => {
         <AntiPrivateRoute path="/authentication" exact>
           <Authentication></Authentication>
         </AntiPrivateRoute>
-        {/* <Route path="/authentication" exact>
-          <Authentication></Authentication>
-        </Route> */}
-        <Route path="/payment" exact>
-          <Payment></Payment>
-        </Route>
-        <Route path="/bikes/payment/:bikePaymentId">
-          <BikePayment/>
-        </Route>
+        <PrivateRoute to="/authentication" path="/bikes/payment/:bikePaymentId">
+          <BikePayment />
+        </PrivateRoute>
         <Route>
           <h2>Page Not Found</h2>
         </Route>

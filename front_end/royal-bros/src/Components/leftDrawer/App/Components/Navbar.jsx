@@ -18,6 +18,7 @@ import LocationModal from "../../../LocationModal/LocationModal";
 import { useSelector, useDispatch } from "react-redux";
 import ProfileDropdown from "../../ProfileDropdown";
 import { logoutHandler } from "../../../../Redux/Auth/Actions";
+import { chooseLocationHandler } from "../../../../Redux/Tarrif/Actions";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -130,6 +131,10 @@ function Navbar(props) {
     setDropDown(false);
   };
 
+  React.useEffect(() => {
+    dispatch(chooseLocationHandler("60489b1667b6df5e649d9671"));
+  }, []);
+
   return (
     <div className={classes.root}>
       <LocationModal
@@ -162,13 +167,13 @@ function Navbar(props) {
             <Link className={styles.tarrifLink} to="/tarrif">
               Tarrif
             </Link>
-            <Link className={styles.whatsNewLink} to="/whatsNew">
-              What's new?
+            <Link className={styles.whatsNewLink} to="/royalbrothersX">
+              Monthly Rentals
             </Link>
-            <Link className={styles.offersLink} to="/offers">
+            <Link className={styles.offersLink} to="">
               Offers
             </Link>
-            <Link className={styles.partnerWithUsLink} to="/partnerWithUs">
+            <Link className={styles.partnerWithUsLink} to="">
               Partner with us
             </Link>
             <Link className={styles.searchLink} to="/search">
@@ -257,7 +262,7 @@ function Navbar(props) {
           },
           {
             text: "About Us",
-            to: "/aboutUs",
+            // to: "/aboutUs",
           },
           {
             text: "Terms And Conditions",
@@ -273,7 +278,7 @@ function Navbar(props) {
           },
           {
             text: "Reach Us",
-            to: "/reachUs",
+            // to: "/reachUs",
           },
         ].map((item, index) => (
           <>

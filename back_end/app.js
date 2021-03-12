@@ -175,11 +175,11 @@ app.post("/rentals", async (req, res) => {
 const monthsSchema = mongoose.Schema({
   bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
   userId: String,
-  pickup_date: Date,
-  pickup_time: String,
-  paid: Number,
+  pickup_date: String,
+  price: Number,
   deposit: Number,
-  months: Number,
+  month: Number,
+  expiry: Date,
 });
 
 const Months = mongoose.model("months", monthsSchema);
