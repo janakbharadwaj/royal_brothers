@@ -1,6 +1,7 @@
 .main__cont{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
    
     
 }
@@ -24,6 +25,9 @@
     align-items: center;
     flex-wrap: wrap;
 
+}
+.main__cont__bikesdata__Items img{
+    width:70%;
 }
 .main__cont__bikesdata__Items > div{
     background-color: #FFFFFF;

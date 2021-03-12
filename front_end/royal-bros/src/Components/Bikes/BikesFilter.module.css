@@ -13,6 +13,7 @@
     border:0;
     outline: none;
     border-bottom: 1px solid black;
+    width:90%;
 }
 .bikes__filter__page
 {

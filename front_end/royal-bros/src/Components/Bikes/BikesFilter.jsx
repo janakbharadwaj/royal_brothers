@@ -74,7 +74,7 @@ import {useSelector,useDispatch} from "react-redux"
                 <div>
                   <p style={{fontWeight:"bolder"}}>Search Duration</p>
                   {(pickUpDate && dropOffDate)  &&  TimeConversion(pickUpDate,dropOffDate)`days` } 
-                  <p>Search By location</p>
+                  <p style={{fontWeight:"bolder"}}>Search By location</p>
                   <select>
                     {["IndiraNagar","koramangala"].map((city,index)=>
                     <option key={index} value={city}>{city}</option>)}
