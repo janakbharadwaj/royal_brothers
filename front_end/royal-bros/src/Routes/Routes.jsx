@@ -13,6 +13,7 @@ import Orders from "../Components/User/Orders";
 import Profile from "../Components/User/Profile";
 import AntiPrivateRoute from "./AntiPrivateRoute";
 import PrivateRoute from "./PrivateRoute";
+import { AtherTestRide } from "../Components/AtherTestRide/AtherTestRide";
 
 const Routes = () => {
   return (
@@ -24,15 +25,15 @@ const Routes = () => {
         <Route path="/tarrif" exact>
           <Tarrif />
         </Route>
-        <Route path="/whatsNew" exact>
-          <h1>whats new ?</h1>
+        <Route path="/royalbrothersX" exact>
+          <RoyalBrosXSearch />
         </Route>
-        <Route path="/offers" exact>
-          <h1>offers</h1>
+        {/* <Route path="/offers" exact>
+          
         </Route>
         <Route path="/partnerWithUs" exact>
-          <h1>partner with us</h1>
-        </Route>
+          
+        </Route> */}
         <Route path="/search" exact>
           <Bikes />
         </Route>
@@ -46,14 +47,14 @@ const Routes = () => {
           <RoyalBrosIndBike />
         </PrivateRoute>
         <Route path="/testRideAther" exact>
-          <h2>test ride ather</h2>
+          <AtherTestRide/>
         </Route>
-        <Route path="/aboutUs" exact>
-          <h2>about Us</h2>
+        {/* <Route path="/aboutUs" exact>
+          
         </Route>
         <Route path="/reachUs" exact>
-          <h2>reach Us</h2>
-        </Route>
+          
+        </Route> */}
         <PrivateRoute to="/authentication" path="/orders">
           <Orders></Orders>
         </PrivateRoute>

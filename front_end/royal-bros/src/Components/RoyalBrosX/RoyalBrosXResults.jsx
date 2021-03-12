@@ -57,9 +57,9 @@ const RoyalBrosXResults = () => {
             </div>
             <div className={styles.sortsDiv}>
                 <p>Sort By</p>
-                <p onClick={getPopular}>POPULAR</p>
-                <p onClick={getPriceLowToHigh}>price low to high</p>
-                <p onClick={getPriceHighToLow}>price high to low</p>
+                <p onClick={getPopular}>Popular</p>
+                <p onClick={getPriceLowToHigh}>Price low - high</p>
+                <p onClick={getPriceHighToLow}>Price high - low</p>
             </div>
             <div className={styles.allDataParent}>
                 {data.map((item)=>(
