@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import { useHistory } from "react-router-dom";
 export const SelectionContext = React.createContext();
@@ -24,12 +25,17 @@ function SelectionContextProvider({ children }) {
   const history = useHistory();
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
-    console.log(value);
     setInfo({ ...info, [name]: value });
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    //do not delete
+    // if (moment(info.dropDate).isSameOrAfter(info.pickupDate)) {
+    //   console.log("true");
+    // } else {
+    //   console.log("false");
+    // }
     history.push("/search");
   };
 

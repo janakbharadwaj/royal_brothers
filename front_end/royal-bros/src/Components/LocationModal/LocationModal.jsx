@@ -36,7 +36,7 @@ function LocationModal({ modalOpen, setModalOpen }) {
       open={modalOpen}
       onClose={() => setModalOpen(false)}
     >
-      <Paper className={classes.paper}>
+      <Paper className={styles.Paper}>
         <div className={styles.LocationModal}>
           <div className={styles.LocationModal__header}>
             <img

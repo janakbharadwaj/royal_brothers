@@ -8,8 +8,9 @@ import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 import styles from "./Authentication.module.css";
 import { signupHandler } from "../../Redux/Auth/Actions";
-import { Label } from "@material-ui/icons";
-import { InputLabel } from "@material-ui/core";
+import { Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,6 +45,15 @@ function Signup() {
   const dispatch = useDispatch();
   const message = useSelector((state) => state.authReducer.signupRes);
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [snackBarOpen, setSnackBarOpen] = React.useState(false);
+
+  const snackBarHandler = (input) => {
+    if (input) {
+      setSnackBarOpen(true);
+    } else {
+      setSnackBarOpen(false);
+    }
+  };
 
   const passwordVisibilityHandler = () => {
     setPasswordVisible((prev) => !prev);
@@ -61,11 +71,19 @@ function Signup() {
 
   return (
     <form onSubmit={onSubmitHandler} className={styles.Authentication__form}>
-      <h3
-        style={{ color: message === "User already exists" ? "red" : "green" }}
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={snackBarOpen}
+        onClose={() => snackBarHandler(false)}
+        message={message}
       >
-        {message}
-      </h3>
+        <Alert
+          onClose={() => snackBarHandler(false)}
+          severity={message === "Success" ? "success" : "error"}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
       <div>
         <TextField
           className={classes.textField}
@@ -114,7 +132,11 @@ function Signup() {
         />
       </div>
       <div>
-        <button className={styles.Authentication__button} type="submit">
+        <button
+          onClick={() => snackBarHandler(true)}
+          className={styles.Authentication__button}
+          type="submit"
+        >
           Sign up
         </button>
       </div>

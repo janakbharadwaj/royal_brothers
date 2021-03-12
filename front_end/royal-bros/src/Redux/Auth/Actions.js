@@ -24,7 +24,7 @@ export const signupHandler = (payload) => (dispatch) => {
   dispatch(signupRequest());
   return axios
     .post("http://localhost:8080/users/signup", payload)
-    .then((res) => dispatch(signupSuccess(res.data.message)))
+    .then((res) => dispatch(signupSuccess(res.data)))
     .catch((err) => console.log(err), dispatch(signupFailure()));
 };
 

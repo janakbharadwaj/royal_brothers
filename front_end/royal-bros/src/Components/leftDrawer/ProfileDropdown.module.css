@@ -15,6 +15,7 @@
 
 .ProfileDropdown > div:hover {
   background-color: rgb(184, 169, 169);
+  border-radius: 5px;
 }
 
 .ProfileDropdown hr {

@@ -103,3 +103,7 @@
 .profile img {
   width: 25%;
 }
+
+.currentUser {
+  text-transform: capitalize;
+}

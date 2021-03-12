@@ -126,6 +126,8 @@ function Navbar(props) {
 
   const logoutClickHandler = () => {
     dispatch(logoutHandler());
+    history.push("/");
+    setDropDown(false);
   };
 
   return (
@@ -178,7 +180,7 @@ function Navbar(props) {
                 src="https://d36g7qg6pk2cm7.cloudfront.net/assets/icons/location-71f31ec08c06cf6736a1d12d6381dfc5786c237acdb690006334bd670e011904.png"
                 alt="location"
               />
-              <span>{currentLocation?.location_name || "Location"}</span>{" "}
+              <span>{currentLocation?.location_name || "Location"}</span>
               <i className="fas fa-chevron-down"></i>
             </button>
             {isAuth ? (
@@ -191,7 +193,9 @@ function Navbar(props) {
                   src="https://d36g7qg6pk2cm7.cloudfront.net/assets/profile-f17aa1dfbd0cb562142f1dcb10bb7ad33e1ac8417ad29a1cdab7dfbfbbfe2f15.png"
                   alt="profile"
                 />
-                <span>{userData.first_name || "User"}</span>
+                <span className={styles.currentUser}>
+                  {userData.first_name || "User"}
+                </span>
                 <i className="fas fa-chevron-down"></i>
                 {dropDown && (
                   <ProfileDropdown

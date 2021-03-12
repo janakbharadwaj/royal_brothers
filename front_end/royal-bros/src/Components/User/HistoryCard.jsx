@@ -7,11 +7,15 @@ function HistoryCard({
   drop_date,
   pickup_time,
   drop_time,
+  index,
 }) {
   const { _id, bike_name, bike_image, hourly_rate } = bikeId;
 
   return (
     <div className={styles.HistoryCard} key={_id}>
+      <div>
+        <h2>{index + 1}</h2>
+      </div>
       <div>
         <div className={styles.HistoryCard__image}>
           <img src={bike_image} alt="bike"></img>

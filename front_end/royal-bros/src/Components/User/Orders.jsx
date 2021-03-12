@@ -16,11 +16,17 @@ function Orders() {
   return (
     <div className={styles.Orders}>
       <h1>My Rides</h1>
-      <div className={styles.Orders__list}>
-        {ordersData?.map((item) => (
-          <HistoryCard {...item} />
-        ))}
-      </div>
+      {ordersData.length === 0 ? (
+        <div>
+          <h1>Oops!! you have not booked any rides</h1>
+        </div>
+      ) : (
+        <div className={styles.Orders__list}>
+          {ordersData?.map((item, index) => (
+            <HistoryCard {...item} index={index} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

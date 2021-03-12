@@ -8,6 +8,9 @@ import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 import styles from "./Authentication.module.css";
 import { loginHandler } from "../../Redux/Auth/Actions";
+import { Snackbar } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +45,16 @@ function Login() {
   const message = useSelector((state) => state.authReducer.loginRes);
   const isAuth = useSelector((state) => state.authReducer.isAuth);
   const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [snackBarOpen, setSnackBarOpen] = React.useState(false);
+  const history = useHistory();
+
+  const snackBarHandler = (input) => {
+    if (input) {
+      setSnackBarOpen(true);
+    } else {
+      setSnackBarOpen(false);
+    }
+  };
 
   const passwordVisibilityHandler = () => {
     setPasswordVisible((prev) => !prev);
@@ -59,11 +72,19 @@ function Login() {
 
   return (
     <form onSubmit={onSubmitHandler} className={styles.Authentication__form}>
-      <h3
-        style={{ color: message === "User already exists" ? "red" : "green" }}
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        open={snackBarOpen}
+        onClose={() => snackBarHandler(false)}
+        message={message}
       >
-        {message}
-      </h3>
+        <Alert
+          onClose={() => snackBarHandler(false)}
+          severity={message === "Success" ? "success" : "error"}
+        >
+          {message}
+        </Alert>
+      </Snackbar>
       <div>
         <TextField
           className={classes.textField}
@@ -92,7 +113,11 @@ function Login() {
         />
       </div>
       <div>
-        <button className={styles.Authentication__button} type="submit">
+        <button
+          onClick={() => snackBarHandler(true)}
+          className={styles.Authentication__button}
+          type="submit"
+        >
           Login
         </button>
       </div>

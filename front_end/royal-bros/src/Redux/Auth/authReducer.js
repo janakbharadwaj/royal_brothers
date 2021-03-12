@@ -20,7 +20,7 @@ export const authReducer = (state = initState, { type, data }) => {
     case actionTypes.SIGNUP_SUCCESS: {
       return {
         ...state,
-        signupRes: data,
+        signupRes: data.message,
         isLoading: false,
       };
     }

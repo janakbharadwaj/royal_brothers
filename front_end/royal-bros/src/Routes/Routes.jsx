@@ -10,6 +10,8 @@ import { RoyalBrosXSearch } from "../Components/RoyalBrosX/RoyalBrosXSearch";
 import Tarrif from "../Components/Tarrif/Tarrif";
 import Orders from "../Components/User/Orders";
 import Profile from "../Components/User/Profile";
+import AntiPrivateRoute from "./AntiPrivateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = () => {
   return (
@@ -51,15 +53,18 @@ const Routes = () => {
         <Route path="/reachUs" exact>
           <h2>reach Us</h2>
         </Route>
-        <Route path="/orders" exact>
+        <PrivateRoute to="/authentication" path="/orders">
           <Orders></Orders>
-        </Route>
-        <Route path="/users" exact>
+        </PrivateRoute>
+        <PrivateRoute to="/authentication" path="/users">
           <Profile></Profile>
-        </Route>
-        <Route path="/authentication" exact>
+        </PrivateRoute>
+        <AntiPrivateRoute path="/authentication" exact>
           <Authentication></Authentication>
-        </Route>
+        </AntiPrivateRoute>
+        {/* <Route path="/authentication" exact>
+          <Authentication></Authentication>
+        </Route> */}
         <Route path="/payment" exact>
           <Payment></Payment>
         </Route>

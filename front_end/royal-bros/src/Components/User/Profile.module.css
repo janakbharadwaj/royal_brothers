@@ -1,3 +1,60 @@
+.Wrapper {
+  min-height: 70vh;
+}
+
 .Profile {
-  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 100px;
+  box-shadow: 8px 8px 16px rgb(216, 208, 208);
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.Profile > div {
+  margin: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid rgb(228, 223, 223);
+}
+
+.Profile > div:nth-child(2) {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.Profile label {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.Profile p {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.Profile p {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.Profile button {
+  width: 100%;
+  background-color: #fed250;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+}
+
+.Profile button:hover {
+  background-color: #ffc400;
 }

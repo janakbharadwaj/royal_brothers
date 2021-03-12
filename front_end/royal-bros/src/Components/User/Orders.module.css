@@ -7,7 +7,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 4px solid rgb(240, 235, 235); */
   width: 80%;
   margin: 50px auto;
   border-radius: 5px;
@@ -19,24 +18,32 @@
   align-items: center;
   justify-content: space-between;
   margin: 20px;
+  box-shadow: 8px 8px 16px rgb(194, 188, 188);
+  border-radius: 5px;
+}
+.HistoryCard label {
+  font-weight: 800;
+  font-size: 14px;
+  color: #2c2b28;
+  text-transform: uppercase;
 }
 
 .HistoryCard__details {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .HistoryCard__details > div {
   margin: 10px;
-  box-shadow: 2px 2px 5px rgb(194, 188, 188);
   padding: 25px;
   border-radius: 5px;
 }
 
 .HistoryCard__details button {
   width: 100%;
+  min-width: 100px;
   background-color: #fed250;
-  border-radius: 5px;
   text-transform: uppercase;
   border: none;
   font-size: 13px;
@@ -45,6 +52,7 @@
   line-height: 36px;
   outline: none;
   font-family: "Mulish", sans-serif;
+  border-radius: 5px;
 }
 
 .HistoryCard__details button:hover {

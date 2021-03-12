@@ -64,9 +64,8 @@ app.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.send({
-        message: errors.errors.msg,
-      });
+      console.log(errors.errors[0].msg);
+      return res.send({ message: errors.errors[0].msg });
     }
 
     const { first_name, last_name, email, password } = req.body;
@@ -87,9 +86,7 @@ app.post(
       password,
     });
 
-    res
-      .status(200)
-      .json({ message: "Registration Successful", userId: user.id });
+    res.status(200).json({ message: "Success", userId: user.id });
   }
 );
 
@@ -113,9 +110,7 @@ app.post("/users/login", async (req, res) => {
       message: "Incorrect Password",
     });
   }
-  res
-    .status(200)
-    .json({ message: "Login  Successful", userData: user, isAuth: true });
+  res.status(200).json({ message: "Success", userData: user, isAuth: true });
 });
 
 app.get("/locations", async (req, res) => {
@@ -162,6 +157,7 @@ const rentalsSchema = mongoose.Schema({
   pickup_time: String,
   drop_date: Date,
   drop_time: String,
+  paid: Number,
 });
 
 const Rentals = mongoose.model("rentals", rentalsSchema);
@@ -172,6 +168,36 @@ app.get("/rentals/:id", async (req, res) => {
     .exec();
 
   res.status(200).json(rentals);
+});
+
+app.post("/rentals", async (req, res) => {
+  const rentals = await Rentals.create(req.body);
+  res.status(201).json(rentals);
+});
+
+//for months subscription
+const monthsSchema = mongoose.Schema({
+  bikeId: { type: mongoose.Schema.Types.ObjectId, ref: "bikes" },
+  userId: String,
+  pickup_date: Date,
+  pickup_time: String,
+  paid: Number,
+  deposit: Number,
+  months: Number,
+});
+
+const Months = mongoose.model("months", monthsSchema);
+
+app.get("/months/:id", async (req, res) => {
+  const months = await Months.find({ userId: req.params.id })
+    .populate("bikeId")
+    .exec();
+  res.status(200).json(months);
+});
+
+app.post("/months", async (req, res) => {
+  const months = await Months.create(req.body);
+  res.status(201).json(months);
 });
 
 // Starting the server
