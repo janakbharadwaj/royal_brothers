@@ -106,7 +106,11 @@
 .upper__cont{
 
 }
-.upper__cont >span
+.upper__cont >button
 {
-    margin: 0px 5vh;
+    margin: 1px 5vh;
+    background-color:#fed250 ;
+    outline: none;
+    border: 0;
+    
 }
