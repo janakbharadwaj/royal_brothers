@@ -22,7 +22,7 @@ const BikeItem = ({
           <h4>{bike_name}</h4>
           <img src={bike_image} alt="bike" />
         </div>
-        <div className={styles.bikeItems__availability}>
+        {/* <div className={styles.bikeItems__availability}>
           <p>Available at</p>
           <select>
             {["hello1", "hello2"].map((tag) => (
@@ -31,7 +31,7 @@ const BikeItem = ({
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
         <div className={styles.bikeItems__timings}>
           <div>
             <p>{pickUpTime}</p>
