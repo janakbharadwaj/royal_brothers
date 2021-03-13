@@ -48,6 +48,16 @@ Select the location based on your preference and enjoy the ride, We have impleme
 
 
 ## Glimpse of our work
+![home 2](https://user-images.githubusercontent.com/39058941/111019686-ec977e00-83e6-11eb-81e8-84625a9e7576.png)
+![monthly 2](https://user-images.githubusercontent.com/39058941/111019677-e86b6080-83e6-11eb-8d61-166e05a32a96.png)
+![pay](https://user-images.githubusercontent.com/39058941/111019679-ea352400-83e6-11eb-8f77-62d28130e652.png)
+![rentals 2](https://user-images.githubusercontent.com/39058941/111019680-eacdba80-83e6-11eb-8a63-edde4108c9bc.png)
+![rentals](https://user-images.githubusercontent.com/39058941/111019681-eb665100-83e6-11eb-88bd-4da2ab6dcf53.png)
+![search](https://user-images.githubusercontent.com/39058941/111019682-ebfee780-83e6-11eb-96e5-d1c0eebe84f8.png)
+![subscriptions](https://user-images.githubusercontent.com/39058941/111019683-ec977e00-83e6-11eb-9ec4-77bab328219f.png)
+
+
+
 
 
 
