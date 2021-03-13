@@ -91,7 +91,7 @@ const BikesFilter = ({
         </label>
       </div>
 
-      <div>
+      <div className={styles.Checkbox}>
         <p style={{ fontWeight: "bolder" }}>Search Duration</p>
         {pickUpDate && dropOffDate && TimeConversion(pickUpDate, dropOffDate)}
         days
@@ -106,9 +106,8 @@ const BikesFilter = ({
       <div className={styles.bikes__filter__page}>
         <form id="myform" onSubmit={handleSubmit}>
           {bikeData?.map((bike) => (
-            <>
-              <br />
-              <label key={bike._id}>
+            <div className={styles.Checkbox} key={bike._id}>
+              <label>
                 <input
                   type="checkbox"
                   name={`${bike.bike_name}`}
@@ -117,7 +116,7 @@ const BikesFilter = ({
                 />
                 {bike.bike_name}
               </label>
-            </>
+            </div>
           ))}
           <br />
           {/* <input className={styles.apply_filter_btn} type="submit" value="APPLY FILTERS"/> */}

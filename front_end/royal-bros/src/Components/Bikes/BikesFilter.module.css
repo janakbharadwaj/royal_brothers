@@ -1,3 +1,11 @@
+.text__part {
+  box-shadow: 8px 8px 16px rgb(190, 187, 187);
+
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+}
+
 .date__time {
   display: flex;
   justify-content: space-between;
@@ -14,28 +22,40 @@
   width: 100%;
 }
 .bikes__filter__page {
-  border: 1px solid #9e9e9e;
-  border-radius: 3px;
+  /* border: 1px solid #9e9e9e; */
+
+  border-radius: 5px;
   text-align: left;
   padding: 10px;
-  overflow-y: scroll;
-  height: 30vh;
+  /* overflow-y: scroll; */
+  /* height: 30vh; */
 }
 .bikes__filter__page label {
   color: #9e9e9e;
 }
 .apply_filter_btn {
   background-color: #fed250;
-  width: 80%;
+  width: 100%;
   height: 5vh;
   border-radius: 3px;
   border: 0;
   outline: none;
-  margin: 1vh auto;
+  margin: 2vh auto;
+  font-weight: 600;
+  border-radius: 5px;
 }
 .text__part {
   text-align: left;
   padding: 2vh;
   /* overflow-y: scroll;
     height:90vh; */
+}
+
+.Checkbox {
+  font-size: 18px;
+  /* border-bottom: 1px solid rgb(226, 219, 219); */
+}
+
+.Checkbox input {
+  margin-right: 15px;
 }
