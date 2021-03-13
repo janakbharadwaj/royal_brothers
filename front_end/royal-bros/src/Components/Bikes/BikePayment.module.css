@@ -1,152 +1,135 @@
-.main__cont{
-  
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    text-align: left;
-  
-   
-}
-.main__cont >div{
-    background-color: #FFFFFF;
-    margin: 2vh;
-     
-    text-align: center;
-    padding: 8px;
-    border-radius: 5px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-}
-.main__cont >div:nth-child(2)
-{
-    width:25vw;
-}
-.bikeItems__timings
-{
- 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    height: 8vh;
-    border-top: 2px soid;
-    margin-top: 4px;
-    padding: 1vh;
-}
-.bikeItems__timings > div{
-   
-}
-.bikeItems__timings p{
-    margin: 2px;
-    font-size: 15px;
-}
-.main__cont__info{
-    display: flex;
-    justify-content: center;
-   
-}
-.main__cont__infoMore{
-   
-}
-.week__day__price
-{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1px 7px;
-}
-.week__day__priceTotal
-{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    font-weight: bold;
-    padding: 1px 7px;
-    color:#555;
-}
-.week__day__couponcode{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    font-weight: bold;
-    padding: 1px 7px;
-    margin-top: 4vh;
-
-}
-.week__day__couponcode > input{
-    outline: none;
-    border: 0;
-    border-bottom: 1px solid grey ;
-    width:20vw;   
-}
-.week__day__couponcode > button{
-    background-color: #fed250;
-    border-radius: 5px;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    width:10vw;
-    height: 5vh;
-    margin-left:2vw;
-}
-.excess__charges{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 1px 7px;
+.main__cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   text-align: left;
 }
-.excess__charges >div:nth-child(2)
-{
-    text-align: right;
+.main__cont > div {
+  background-color: #ffffff;
+  margin: 2vh;
+
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
-.checkout__part
-{
-    display: flex;
-    padding: 10px;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    flex-wrap: wrap;
+.main__cont > div:nth-child(2) {
+  width: 25vw;
+}
+.bikeItems__timings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  height: 8vh;
+  border-top: 2px soid;
+  margin-top: 4px;
+  padding: 1vh;
+}
+.bikeItems__timings > div {
+}
+.bikeItems__timings p {
+  margin: 2px;
+  font-size: 15px;
+}
+.main__cont__info {
+  display: flex;
+  justify-content: center;
+}
+.main__cont__infoMore {
+}
+.week__day__price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1px 7px;
+}
+.week__day__priceTotal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  font-weight: bold;
+  padding: 1px 7px;
+  color: #555;
+}
+.week__day__couponcode {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  font-weight: bold;
+  padding: 1px 7px;
+  margin-top: 4vh;
+}
+.week__day__couponcode > input {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid grey;
+  width: 20vw;
+}
+.week__day__couponcode > button {
+  background-color: #fed250;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width: 10vw;
+  height: 5vh;
+  margin-left: 2vw;
+}
+.excess__charges {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1px 7px;
+  text-align: left;
+}
+.excess__charges > div:nth-child(2) {
+  text-align: right;
+}
+.checkout__part {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
 }
 /* .checkout__part > div{
   border:1px solid black;
 } */
 
-.total__payment
-{
+.total__payment {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
 }
-.makepayment__button > button
-{
-  width:90%;
+.makepayment__button > button {
+  width: 90%;
   background-color: #fed250;
-   border-radius: 5px;
-   outline: none;
-   border:0;
-   height: 6vh;
-   margin: 3vh 2vh;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+  height: 6vh;
+  margin: 3vh 2vh;
 }
-.bike__image__name
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bike__image__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.bike__image__name  > div > p{
-padding: 10px 14px;
-font-weight: bolder;
-font-size: larger;
+.bike__image__name > div > p {
+  padding: 10px 14px;
+  font-weight: bolder;
+  font-size: larger;
 }
-.area_address{
-    color:#555;
-    padding: 2px 1vh;
-    
+.area_address {
+  color: #555;
+  padding: 2px 1vh;
 }

@@ -45,10 +45,10 @@ const BikePayment = () => {
   return (
     <div className={styles.main__cont}>
       <div style={{ textAlign: "left" }}>
-        <h1 style={{marginLeft:"20px"}}>SUMMARY</h1>
+        <h1 style={{ marginLeft: "20px" }}>SUMMARY</h1>
         <div className={styles.main__cont__info}>
           <div className={styles.bike__image__name}>
-            <div style={{textAlign:"center"}}>
+            <div style={{ textAlign: "center" }}>
               <img src={singleBike.bike_image} alt="bike" />
               <p>{singleBike.bike_name}</p>
             </div>
@@ -80,7 +80,7 @@ const BikePayment = () => {
               </div>
               <div>{total_without_tax(singleBike.hourly_rate)}.0</div>
             </div>
-            <hr style={{color:"#555"}} />
+            <hr style={{ color: "#555" }} />
             <div className={styles.week__day__priceTotal}>
               <div>Total</div>
               <div>{total_without_tax(singleBike.hourly_rate)}.0</div>

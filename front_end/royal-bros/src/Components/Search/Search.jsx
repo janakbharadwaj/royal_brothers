@@ -39,6 +39,7 @@ function Search({ modalOpen, setModalOpen }) {
                 name="pickupDate"
                 type="Date"
                 required
+                min={new Date().toISOString().split("T")[0]}
               ></input>
             </div>
             <div>
@@ -60,6 +61,7 @@ function Search({ modalOpen, setModalOpen }) {
                 value={dropDate}
                 type="date"
                 required
+                min={pickupDate}
               ></input>
             </div>
             <div>

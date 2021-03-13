@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import FleetCard from "./FleetCard";
 import HomeCarousel from "./HomeCarousel";
 import { useHistory } from "react-router";
+import moment from "moment";
 
 function Home() {
   const allBikes = useSelector((state) => state.tarrifReducer.allBikes);
@@ -33,6 +34,7 @@ function Home() {
                   value={pickupDate}
                   name="pickupDate"
                   type="date"
+                  min={new Date().toISOString().split("T")[0]}
                 ></input>
               </div>
               <div>
@@ -52,6 +54,7 @@ function Home() {
                   name="dropDate"
                   value={dropDate}
                   type="date"
+                  min={pickupDate}
                 ></input>
               </div>
               <div>

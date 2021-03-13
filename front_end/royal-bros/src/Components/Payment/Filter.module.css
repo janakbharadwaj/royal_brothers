@@ -1,0 +1,41 @@
+.Filter {
+  padding: 15px;
+  margin-right: 10px;
+}
+
+.Search {
+  text-align: left;
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: "Mulish", sans-serif;
+  outline: none;
+  border-radius: 5px;
+}
+.Search__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Search__element > div {
+  width: 50%;
+  margin: 15px auto;
+}
+
+.Search label {
+  font-weight: 800;
+}
+
+.Search__element input {
+  width: 100%;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 0.5px solid rgb(228, 225, 225);
+  margin: 5px auto;
+  color: rgb(80, 75, 75);
+}

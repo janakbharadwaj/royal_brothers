@@ -1,0 +1,110 @@
+.BikeCard {
+  width: 22%;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  margin: 10px;
+  min-width: 370px;
+  padding-top: 15px;
+  height: fit-content;
+}
+
+.BikeCard h2 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.BikeCard_image {
+}
+
+.BikeCard_image img {
+  transform: translate(-50px);
+}
+
+.BikeCard__Nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  box-shadow: -2px 3px 10px rgb(219, 216, 216);
+}
+
+.BikeCard__Nav__tab {
+  text-decoration: none;
+  list-style: none;
+  border-radius: 0;
+  width: 20%;
+  padding: 15px 0;
+  font-size: 13px;
+  font-weight: 400;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 3px solid #fed250;
+  text-transform: uppercase;
+}
+
+.BikeCard__panel {
+  height: 310px;
+  padding: 30px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.BikeCard__button {
+  width: 100%;
+  background-color: #fed250;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: uppercase;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  line-height: 36px;
+  outline: none;
+  font-family: "Mulish", sans-serif;
+}
+
+.BikeCard__button:hover {
+  background-color: #ffc400;
+}
+
+.BikeCard__panel__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+.BikeCard__panel__flex > div:nth-child(1) {
+  width: 80%;
+}
+
+.BikeCard__panel__sub {
+  margin: 15px auto;
+}
+
+.BikeCard_stats {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.to {
+  background-color: black;
+  border-radius: 50%;
+  padding: 8px 12px;
+  color: white;
+  font-size: 15px;
+}
+
+.BikeCard_footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.BikeCard_footer > div {
+  width: 50%;
+}
