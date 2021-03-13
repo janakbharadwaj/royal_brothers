@@ -30,14 +30,8 @@ function SelectionContextProvider({ children }) {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    //do not delete
-    // if (moment(info.dropDate).isSameOrAfter(info.pickupDate)) {
-    //   console.log("true");
-    // } else {
-    //   console.log("false");
-    // }
-    console.log(moment(info.pickupDate).add(8, "month").format("MM/DD/YYYY"));
     history.push("/search");
+    // history.push("/partnerWithUs");
   };
 
   const selectedBikeHandler = (payload) => {

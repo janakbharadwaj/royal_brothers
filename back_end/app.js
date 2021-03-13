@@ -47,6 +47,14 @@ app.get("/bikes/:id", async (req, res) => {
   res.status(200).json({ data: bikes });
 });
 
+app.post("/bikes/filter/gg", async (req, res) => {
+  console.log(req.body.arr);
+  const bikes = await Bikes.find({ _id: { $in: req.body.arr } })
+    .lean()
+    .exec();
+  res.status(200).json({ data: bikes });
+});
+
 //user auth
 
 //signup

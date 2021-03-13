@@ -170,12 +170,6 @@ function Navbar(props) {
             <Link className={styles.whatsNewLink} to="/royalbrothersX">
               Monthly Rentals
             </Link>
-            <Link className={styles.offersLink} to="">
-              Offers
-            </Link>
-            <Link className={styles.partnerWithUsLink} to="">
-              Partner with us
-            </Link>
             <Link className={styles.searchLink} to="/search">
               <i class="fas fa-search"></i> Search
             </Link>

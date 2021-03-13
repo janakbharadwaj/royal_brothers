@@ -1,0 +1,58 @@
+.SearchFilter {
+  display: flex;
+  border-top: 2px solid rgb(209, 204, 204);
+  justify-content: center;
+}
+
+.SearchFilter > div:nth-child(1) {
+  min-width: 350px;
+  width: 25%;
+}
+
+.SearchFilter > div:nth-child(2) {
+  width: 75%;
+}
+
+.SearchFilter__bikes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-left: 3px solid rgb(207, 202, 202);
+}
+
+.SearchFilter__filter {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.SearchFilter__filter > div {
+  margin: 10px 20px;
+  box-shadow: 8px 8px 16px rgb(223, 220, 220);
+  border-radius: 5px;
+  padding: 15px 10px 0px 0px;
+}
+
+.checkBox {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 17px;
+}
+
+.checkBox label {
+  margin-left: 15px;
+}
+
+.Search__element > button {
+  width: 95%;
+  font-size: 17px;
+  padding: 10px;
+  margin: 25px auto 25px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-family: "Mulish", sans-serif;
+  background-color: #fed250;
+}

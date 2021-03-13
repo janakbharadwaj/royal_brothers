@@ -14,6 +14,7 @@ import Profile from "../Components/User/Profile";
 import AntiPrivateRoute from "./AntiPrivateRoute";
 import PrivateRoute from "./PrivateRoute";
 import { AtherTestRide } from "../Components/AtherTestRide/AtherTestRide";
+import SearchFilter from "../Components/Payment/SearchFilter";
 
 const Routes = () => {
   return (
@@ -28,11 +29,9 @@ const Routes = () => {
         <Route path="/royalbrothersX" exact>
           <RoyalBrosXSearch />
         </Route>
-        {/* <Route path="/offers" exact>
-          
-        </Route>
-        <Route path="/partnerWithUs" exact>
-          
+
+        {/* <Route path="/partnerWithUs" exact>
+          <SearchFilter></SearchFilter>
         </Route> */}
         <Route path="/search" exact>
           <Bikes />
@@ -47,7 +46,7 @@ const Routes = () => {
           <RoyalBrosIndBike />
         </PrivateRoute>
         <Route path="/testRideAther" exact>
-          <AtherTestRide/>
+          <AtherTestRide />
         </Route>
         {/* <Route path="/aboutUs" exact>
           
@@ -55,6 +54,9 @@ const Routes = () => {
         <Route path="/reachUs" exact>
           
         </Route> */}
+        <Route path="/troll">
+          <SearchFilter></SearchFilter>
+        </Route>
         <PrivateRoute to="/authentication" path="/orders">
           <Orders></Orders>
         </PrivateRoute>
