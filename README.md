@@ -2,6 +2,12 @@
 
 Royal brothers is a website where we can book bikes on a rental basis
 
+## Credits
+* Images -  [Royal Brothers](https://www.royalbrothers.com/)
+* Content - [Royal Brothers](https://www.royalbrothers.com/)
+* Icons -  [Royal Brothers](https://www.royalbrothers.com/) | [fontawesome](https://fontawesome.com/)
+* References - [MDN](https://developer.mozilla.org/en-US/) | [w3schools](https://www.w3schools.com/)
+
 
 ## Installation
 
