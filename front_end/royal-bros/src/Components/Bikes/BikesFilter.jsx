@@ -94,7 +94,8 @@ const BikesFilter = ({
       <div className={styles.Checkbox}>
         <p style={{ fontWeight: "bolder" }}>Search Duration</p>
         {pickUpDate && dropOffDate && TimeConversion(pickUpDate, dropOffDate)}
-        days
+        <label> days</label>
+
         {/* <p style={{fontWeight:"bolder"}}>Search By location</p>
                   <select>
                     {["IndiraNagar","koramangala"].map((city,index)=>

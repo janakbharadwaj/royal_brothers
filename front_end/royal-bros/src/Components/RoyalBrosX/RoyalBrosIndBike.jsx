@@ -151,7 +151,7 @@ const RoyalBrosIndBike = () => {
         <StripeCheckout
           stripeKey="pk_test_51GuhVYJILFs8StGHjjzZha1VPsLlSzlDyahYHZksGhiDQZ94VIOGLzLOOsZoGwkm9nKgMM3qnVMg8ycODAV2FbWq00z0RR74IN"
           token={handleToken}
-          amount={rate - disc}
+          amount={(rate - disc) * 100}
           currency="INR"
         ></StripeCheckout>
       </div>

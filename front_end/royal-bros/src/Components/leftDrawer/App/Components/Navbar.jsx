@@ -19,6 +19,7 @@ import { useSelector, useDispatch } from "react-redux";
 import ProfileDropdown from "../../ProfileDropdown";
 import { logoutHandler } from "../../../../Redux/Auth/Actions";
 import { chooseLocationHandler } from "../../../../Redux/Tarrif/Actions";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -212,6 +213,7 @@ function Navbar(props) {
           </Toolbar>
         </AppBar>
       </div>
+
       <Drawer
         className={classes.drawer}
         variant="persistent"
@@ -287,6 +289,7 @@ function Navbar(props) {
           </>
         ))}
       </Drawer>
+
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
